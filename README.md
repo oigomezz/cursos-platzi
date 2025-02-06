@@ -8,7 +8,7 @@
 <h4 align="center">Lista de resúmenes de los cursos de <a href="https://platzi.com/r/ivan95cdlm" target="_blank">Platzi</a>.</h4>
 <p align="center">
   <a href="#tabla-de-contenido">
-    <img src="https://img.shields.io/badge/Cursos-1-brightgreen.svg?style=flat-square" alt="Cursos">
+    <img src="https://img.shields.io/badge/Cursos-3-brightgreen.svg?style=flat-square" alt="Cursos">
   </a>
   <a href="https://github.com/oigomezz/cursos-platzi/stargazers">
     <img src="https://img.shields.io/github/stars/oigomezz/cursos-platzi.svg?style=flat-square&label=Stars" alt="Cursos-Platzi stars">
@@ -27,6 +27,7 @@
 
 1. [Curso de Configuración de Entorno de Desarrollo en Windows](Configuración-Entorno-Windows/README.md)
 2. [Curso de Configuración de Entorno de Desarrollo en Linux](Configuración-Entorno-Linux/README.md)
+3. [Curso de Configuración de Entorno de Desarrollo en macOS](Configuración-Entorno-macOS/README.md)
 
 ## Quiero seguir aprendiendo
 
