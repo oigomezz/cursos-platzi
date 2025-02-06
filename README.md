@@ -26,6 +26,7 @@
 ### Full Stack Developer con JavaScript
 
 1. [Curso de Configuración de Entorno de Desarrollo en Windows](Configuración-Entorno-Windows/README.md)
+2. [Curso de Configuración de Entorno de Desarrollo en Linux](Configuración-Entorno-Linux/README.md)
 
 ## Quiero seguir aprendiendo
 
