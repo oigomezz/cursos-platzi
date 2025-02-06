@@ -7,6 +7,9 @@
 - [IDE (Integrated Development Environment)](#ide)
 - [WSL (Windows Subsystem for Linux)](#wsl)
 - [Comandos básicos de la terminal](#comandos-básicos-de-la-terminal)
+- [Git y GitHub](#git-y-github)
+  - [Diferencias entre Git y GitHub](#diferencias-entre-git-y-github)
+  - [Instalación de Git](#instalación-de-git)
 
 ## ¿Qué es un navegador web?
 
