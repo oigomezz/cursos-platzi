@@ -8,7 +8,7 @@
 <h4 align="center">Lista de resúmenes de los cursos de <a href="https://platzi.com/r/ivan95cdlm" target="_blank">Platzi</a>.</h4>
 <p align="center">
   <a href="#tabla-de-contenido">
-    <img src="https://img.shields.io/badge/Cursos-6-brightgreen.svg?style=flat-square" alt="Cursos">
+    <img src="https://img.shields.io/badge/Cursos-7-brightgreen.svg?style=flat-square" alt="Cursos">
   </a>
   <a href="https://github.com/oigomezz/cursos-platzi/stargazers">
     <img src="https://img.shields.io/github/stars/oigomezz/cursos-platzi.svg?style=flat-square&label=Stars" alt="Cursos-Platzi stars">
@@ -36,6 +36,7 @@
 #### Desarrolla el frontend de tu aplicación
 
 1. [Curso de Frontend Developer](Frontend-Developer/README.md)
+2. [Curso Práctico de Frontend Developer](Frontend-Developer/README.md)
 
 ## Quiero seguir aprendiendo
 
