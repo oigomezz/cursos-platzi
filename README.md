@@ -8,7 +8,7 @@
 <h4 align="center">Lista de resúmenes de los cursos de <a href="https://platzi.com/r/ivan95cdlm" target="_blank">Platzi</a>.</h4>
 <p align="center">
   <a href="#tabla-de-contenido">
-    <img src="https://img.shields.io/badge/Cursos-10-brightgreen.svg?style=flat-square" alt="Cursos">
+    <img src="https://img.shields.io/badge/Cursos-11-brightgreen.svg?style=flat-square" alt="Cursos">
   </a>
   <a href="https://github.com/oigomezz/cursos-platzi/stargazers">
     <img src="https://img.shields.io/github/stars/oigomezz/cursos-platzi.svg?style=flat-square&label=Stars" alt="Cursos-Platzi stars">
@@ -40,6 +40,7 @@
 3. [Curso de Fundamentos de JavaScript](Fundamentos-de-JavaScript/README.md)
 4. [Curso de Asincronismo con JavaScript](Asincronismo-con-JavaScript/README.md)
 5. [Curso de Introducción al Desarrollo Backend](Introduccion-Desarrollo-Backend/README.md)
+6. [Curso de Base de Datos con SQL](Base-de-Datos-con-SQL/README.md)
 
 ## Quiero seguir aprendiendo
 
