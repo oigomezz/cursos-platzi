@@ -241,3 +241,118 @@ enum define un conjunto de constantes con nombre.
 ```Dart
 enum Color { red, green, blue }
 ```
+
+## Creación de Widgets Stateless en Flutter para Recetario Interactivo
+
+Aprenderás cómo estructurar y personalizar una aplicación Flutter enfocada en un recetario utilizando StatelessWidget. Exploraremos el uso de propiedades como AppBar, personalización con estilos y colores, y buenas prácticas de desarrollo.
+
+### ¿Cómo crear y estructurar un StatelessWidget?
+
+1. Definición de la clase: Crea una nueva clase que extienda de StatelessWidget. Por ejemplo:
+
+   ```Dart
+   class RecipeBook extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold();
+     }
+   }
+   ```
+
+   - Scaffold actúa como una hoja en blanco donde añadimos elementos.
+
+2. Personalización inicial: Añade propiedades clave como:
+
+   - AppBar: para mostrar un título y definir colores.
+   - Body: el espacio principal donde se mostrará el contenido.
+
+### ¿Cómo personalizar la barra superior con AppBar?
+
+La barra superior se personaliza utilizando la propiedad AppBar. Ejemplo:
+
+```Dart
+return Scaffold(
+  appBar: AppBar(
+    title: Text(
+      'Mi Recetario',
+      style: TextStyle(color: Colors.white),
+    ),
+    backgroundColor: Colors.orange,
+  ),
+);
+```
+
+- La propiedad title define el texto visible.
+- TextStyle permite modificar el color, tamaño y estilo del texto.
+- backgroundColor define el color de fondo del AppBar.
+
+### ¿Cómo eliminar marcas de depuración y warnings?
+
+- Eliminar la marca de depuración: Ajusta la propiedad debugShowCheckedModeBanner a false en MaterialApp.
+
+  ```Dart
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: RecipeBook(),
+  );
+  ```
+
+- Ocultar warnings temporales: Si no afectan el desarrollo actual, coméntalos en el archivo analysis_options.yaml con #.
+
+### ¿Qué buenas prácticas seguir al construir widgets?
+
+- Define widgets constantes si sus datos no cambiarán:
+
+  ```Dart
+  const Text('Constante');
+  ```
+
+- Usa la estructura jerárquica de widgets para mantener el código organizado.
+- Personaliza propiedades como colores y estilos para mejorar la experiencia visual.
+
+### ¿Cómo probar la implementación en el emulador?
+
+- Guarda los cambios en el archivo main.dart.
+- Observa en el emulador cómo se reflejan las personalizaciones.
+- Ajusta y mejora según el comportamiento observado.
+
+## Widgets Esenciales en Flutter: Container, Row, Column y Text
+
+Crear aplicaciones con Flutter permite desarrollar interfaces altamente personalizadas, y para ello es fundamental comprender widgets clave como Container, Row, Column y Text. En este artículo, exploraremos cómo utilizarlos para estructurar y personalizar el cuerpo de tu aplicación.
+
+### ¿Cómo estructurar el cuerpo de tu aplicación en Flutter?
+
+- Antes de agregar widgets, es esencial formatear el código para visualizar la jerarquía correctamente. Usa un formatter, selecciona Dart y observa la disposición en cascada de los widgets.
+- Inicia con un widget Container. Es una caja flexible que puede contener otros widgets, personalizable con propiedades como:
+  - Padding y margin: Para espaciar elementos.
+  - Border y color: Para estilos visuales.
+  - Box model: Define el diseño y estructura.
+
+### ¿Cómo crear tarjetas con información?
+
+1. Usa Container para estructurar las tarjetas:
+
+   - Divide las tarjetas en dos secciones: una para la imagen y otra para el texto.
+   - Agrega un widget Row para alinear los elementos horizontalmente.
+
+2. Configura la imagen:
+
+   - Crea un Container con propiedades de tamaño (height y width).
+   - Aplica el widget ClipRRect para bordes redondeados con la propiedad borderRadius.
+
+3. Organiza el contenido textual:
+
+   - Utiliza un widget Column para colocar elementos en una disposición vertical.
+   - Añade texto con Text, como el nombre de la receta y el autor.
+   - Usa un Container con un color (ej. naranja) para añadir una línea separadora decorativa.
+
+### ¿Cómo agregar espaciado y adaptabilidad?
+
+- **Espaciado:** Incorpora SizedBox para separar elementos horizontal o verticalmente según el contexto (width o height).
+- **Adaptabilidad:** Implementa MediaQuery para ajustar el tamaño de los widgets según la pantalla del dispositivo, especialmente útil para diseños responsive.
+
+### ¿Qué prácticas facilitan el desarrollo en Flutter?
+
+- Formatea el código constantemente para mantener la jerarquía clara.
+- Experimenta con diferentes widgets como Row, Column y Text para dominar su comportamiento.
+- Utiliza propiedades como MediaQuery para diseños flexibles y adaptables.
