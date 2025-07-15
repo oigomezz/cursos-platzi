@@ -94,17 +94,17 @@ class RecipeForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
-    final TextEditingController _recipeName = TextEditingController();
-    final TextEditingController _recipeAuthor = TextEditingController();
-    final TextEditingController _recipeIMG = TextEditingController();
-    final TextEditingController _recipeDecription = TextEditingController();
+    final TextEditingController recipeName = TextEditingController();
+    final TextEditingController recipeAuthor = TextEditingController();
+    final TextEditingController recipeIMG = TextEditingController();
+    final TextEditingController recipeDecription = TextEditingController();
 
     return Padding(
       padding: EdgeInsets.all(12),
       child: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -114,7 +114,7 @@ class RecipeForm extends StatelessWidget {
             ),
             SizedBox(height: 16),
             _buildTextField(
-              controller: _recipeName,
+              controller: recipeName,
               label: 'Recipe Name',
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -125,7 +125,7 @@ class RecipeForm extends StatelessWidget {
             ),
             SizedBox(height: 16),
             _buildTextField(
-              controller: _recipeAuthor,
+              controller: recipeAuthor,
               label: 'Author',
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -136,7 +136,7 @@ class RecipeForm extends StatelessWidget {
             ),
             SizedBox(height: 16),
             _buildTextField(
-              controller: _recipeIMG,
+              controller: recipeIMG,
               label: 'Image Url',
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -148,7 +148,7 @@ class RecipeForm extends StatelessWidget {
             SizedBox(height: 16),
             _buildTextField(
               maxLines: 4,
-              controller: _recipeDecription,
+              controller: recipeDecription,
               label: 'Recipe',
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -161,7 +161,7 @@ class RecipeForm extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
+                  if (formKey.currentState!.validate()) {
                     //Navigator.pop(context);
                   }
                 },
