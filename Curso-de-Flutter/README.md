@@ -356,3 +356,42 @@ Crear aplicaciones con Flutter permite desarrollar interfaces altamente personal
 - Formatea el código constantemente para mantener la jerarquía clara.
 - Experimenta con diferentes widgets como Row, Column y Text para dominar su comportamiento.
 - Utiliza propiedades como MediaQuery para diseños flexibles y adaptables.
+
+## Estructuración y Navegación de Pantallas en Flutter
+
+Aquí aprenderás a estructurar y gestionar pantallas en tu aplicación, integrándolas de manera organizada y funcional en tu proyecto Flutter. Descubre cómo configurar un sistema de navegación con pestañas para mejorar la experiencia del usuario.
+
+### ¿Cómo estructurar las pantallas de tu aplicación?
+
+- **Crea una carpeta específica:** Dentro de tu proyecto, organiza tus pantallas en una nueva carpeta llamada screens.
+- **Configura una pantalla inicial:** Crea un archivo como home_screen.dart para tu pantalla principal.
+- **Usa la convención UpperCamelCase:** Al nombrar clases como HomeScreen, asegúrate de respetar esta convención para mantener la legibilidad.
+
+### ¿Cómo mover componentes del main a la pantalla principal?
+
+- **Identifica los componentes existentes:** Ubica elementos como contenedores en el archivo principal main.dart.
+- **Reubica los widgets al nuevo archivo:** Transfiere estos componentes al archivo de la pantalla principal (home_screen.dart), utilizando el widget Scaffold para estructurarlos.
+- **Reemplaza el child por body:** En el Scaffold, usa body en lugar de child para mayor claridad y funcionalidad.
+
+### ¿Cómo implementar una barra de navegación con pestañas?
+
+- **Agrega un AppBar con TabBar:** Incluye una barra de navegación inferior (TabBar) dentro de tu AppBar.
+- **Configura pestañas iniciales:**
+  - Usa widgets de Icon para representar visualmente las pestañas.
+  - Agrega texto descriptivo con el widget Text.
+- **Utiliza un TabBarView:** Define un TabBarView para que las pestañas muestren diferentes pantallas.
+
+### ¿Cómo solucionar errores al configurar el TabBar?
+
+- **Envuelve el Scaffold con un controlador:** Usa el widget DefaultTabController para manejar las pestañas.
+- **Configura propiedades adicionales:**
+  - Ajusta el indicador de la pestaña activa con un color distintivo.
+  - Personaliza el texto con colores para estados seleccionados y no seleccionados.
+- **Gestiona errores en el emulador:** Si surgen problemas al guardar, refresca el proyecto desde la línea final para aplicar cambios correctamente.
+
+### ¿Qué más puedes personalizar en tu TabBar?
+
+- **Añade más pestañas:** Amplía tu navegación agregando más pantallas al listado de pestañas.
+- **Optimiza el diseño:**
+  - Define un máximo de pestañas visibles.
+  - Configura colores consistentes con el tema de tu aplicación.
