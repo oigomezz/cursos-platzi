@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repice_book/screens/recipe_detail.dart';
+import 'package:recipe_book/screens/recipe_detail.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

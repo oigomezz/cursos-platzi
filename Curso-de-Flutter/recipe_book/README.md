@@ -1,4 +1,4 @@
-# repice_book
+# recipe_book
 
 A new Flutter project.
 

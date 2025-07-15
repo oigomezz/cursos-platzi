@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repice_book/screens/home_screen.dart';
+import 'package:recipe_book/screens/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
