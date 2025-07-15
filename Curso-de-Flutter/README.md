@@ -610,3 +610,47 @@ Column(
   ],
 )
 ```
+
+## Controladores y Validación de Formularios en Flutter
+
+Crear formularios interactivos y validados es esencial para capturar información de manera efectiva. En este contenido, exploraremos cómo implementar campos personalizados, controladores y validaciones en un formulario utilizando Flutter, optimizando así la experiencia del usuario.
+
+### ¿Cómo añadir campos personalizados al formulario?
+
+- Los campos requeridos son: nombre, autor, URL de imagen y descripción de la receta.
+- Para cada campo, se utiliza un TextEditingController que permite capturar y almacenar los datos ingresados.
+- La estructura base incluye etiquetas (label) y controladores asignados de manera única para cada campo.
+
+### ¿Cómo implementar validaciones en los formularios?
+
+- Se usa un GlobalKey< FormState > para manejar el estado del formulario.
+- Los validadores son funciones asociadas a cada campo, verificando si este está vacío o contiene datos incorrectos.
+- Ejemplo de validación:
+  - Si el campo de nombre está vacío, se muestra el mensaje: “Introduzca el nombre de la receta”.
+  - En caso contrario, la validación pasa y el formulario continúa.
+
+### ¿Cómo se conecta la validación con los controladores?
+
+- Cada campo del formulario recibe su propio controlador y validador.
+- La integración de los validadores requiere modificar la widget personalizada, añadiendo parámetros como:
+  - validator: para recibir la función de validación.
+  - maxLines: para definir el número máximo de líneas en campos como la descripción.
+
+### ¿Cómo crear un botón funcional y estilizado?
+
+- Un botón centrado, implementado con ElevatedButton, maneja el envío del formulario.
+- Antes de procesar la información, se valida que todos los campos estén llenos.
+- En caso de éxito, el formulario se cierra con Navigator.pop.
+- Estilo del botón:
+  - Color de fondo, tipografía en negrita y bordes redondeados.
+  - Texto descriptivo como “Guardar receta”.
+
+### ¿Cómo gestionar los campos con múltiples líneas?
+
+- Se agrega una variable opcional maxLines para manejar campos que requieran varias líneas, como la descripción de la receta.
+- Esto permite ajustar dinámicamente la cantidad de texto visible en el formulario.
+
+### ¿Cómo verificar que las validaciones funcionan correctamente?
+
+- Al probar el formulario, los campos vacíos generan mensajes de error específicos.
+- Por ejemplo, si no se completa la URL de imagen, se solicita rellenar dicho campo antes de enviar.
