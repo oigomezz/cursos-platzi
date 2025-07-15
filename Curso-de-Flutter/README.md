@@ -473,3 +473,140 @@ child: Image.network(
 - Otras opciones útiles incluyen:
   - BoxFit.contain para mantener las proporciones sin recortar.
   - BoxFit.fill para estirar la imagen y cubrir el espacio.
+
+## Creación de Formularios y Botones Interactivos en Aplicaciones
+
+Crear interfaces intuitivas y atractivas es esencial para mejorar la experiencia del usuario en una aplicación. En este artículo, exploraremos cómo implementar botones interactivos y formularios personalizables, desde la conceptualización hasta la personalización avanzada, utilizando widgets en Flutter.
+
+### ¿Cómo implementar un botón con acción personalizada?
+
+- **Usa un Floating Action Button:** Este widget se utiliza para acciones principales. Puedes asignarle un onPressed que ejecutará una función cuando se presione.
+- **Personalización del botón:**
+
+  - **Color:** Define colores que resalten, como un naranja de tu paleta.
+  - **Íconos:** Agrega íconos clicables y coloréales, por ejemplo, en blanco, para diferenciarlos del fondo.
+
+  ```Dart
+  FloatingActionButton(
+    onPressed: () {
+      // Lógica a ejecutar
+    },
+    backgroundColor: Colors.orange,
+    child: Icon(Icons.add, color: Colors.white),
+  ),
+  ```
+
+### ¿Cómo mostrar un formulario en un modal?
+
+- **ShowModalBottomSheet:**Permite mostrar un contenedor flotante desde la parte inferior de la pantalla.
+- **Configuración inicial:**
+
+  - **Altura dinámica:** Usa MediaQuery.of(context).size para adaptar el tamaño al ancho de la pantalla.
+  - **Decoración:** Aplica colores, contenedores y texto para estructurar el contenido.
+
+  ```Dart
+  void showModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.5,
+          color: Colors.white,
+          child: Center(child: Text('Hola, aquí va tu formulario')),
+        );
+      },
+    );
+  }
+  ```
+
+### ¿Cómo estructurar un formulario con campos reutilizables?
+
+- **Crea una clase de formulario:** Utiliza un StatelessWidget para estructurar tu formulario.
+- **Formulario dinámico:**
+
+  - Usa Form con una clave (formKey) para manejar validaciones y control de campos.
+  - Estructura los campos en columnas para una alineación vertical.
+
+  ```Dart
+  class RecipeForm extends StatelessWidget {
+    final _formKey = GlobalKey();
+
+    @override
+    Widget build(BuildContext context) {
+      return Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Nueva Receta', style: TextStyle(fontSize: 24, color: Colors.orange)),
+              SizedBox(height: 16),
+              buildTextField('Nombre de la receta'),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget buildTextField(String label) {
+      return TextFormField(
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: TextStyle(color: Colors.orange),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.orange, width: 1),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Colors.orange, width: 1.5),
+          ),
+        ),
+      );
+    }
+  }
+  ```
+
+### ¿Cómo personalizar widgets para reutilización?
+
+- **Define widgets específicos:** Crea widgets para campos de texto que incluyan estilos y validaciones comunes.
+- **Propiedades importantes:**
+  - **label:** Texto para identificar el campo.
+  - **InputDecoration:** Define bordes, colores y estilos.
+  - **BorderRadius:** Redondea los bordes para un diseño más moderno.
+
+### Widget de campo reutilizable
+
+```Dart
+Widget buildCustomTextField(String label, String fontFamily) {
+  return TextFormField(
+    decoration: InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(fontFamily: fontFamily, color: Colors.orange),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.orange, width: 1),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.orange, width: 1.5),
+      ),
+    ),
+  );
+}
+```
+
+### Agrega campos al formulario
+
+```Dart
+Column(
+  children: [
+    buildCustomTextField('Nombre del autor', 'QuickSand'),
+    SizedBox(height: 16),
+    buildCustomTextField('Ingredientes', 'QuickSand'),
+    SizedBox(height: 16),
+    buildCustomTextField('Imagen URL', 'QuickSand'),
+  ],
+)
+```
