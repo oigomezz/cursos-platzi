@@ -432,3 +432,44 @@ Nuestra aplicación se encuentra en una etapa emocionante, donde comenzamos a pe
   - Usa colores temporales como naranja para previsualizar el diseño.
   - Añade bordes redondeados con la propiedad BorderRadius, ajustando su tamaño según sea necesario.
 - Estas propiedades no solo mejoran el diseño, sino que también permiten visualizar dónde irán las imágenes y otros elementos.
+
+## Configuración de Imágenes en Flutter: Uso de Carpeta Assets
+
+Flutter te permite personalizar tu aplicación incluyendo imágenes de manera sencilla, ya sea desde tu proyecto o mediante URLs externas. Aquí te mostramos cómo configurar y optimizar tu recetario con imágenes.
+
+### ¿Cómo configurar la carpeta de imágenes en Flutter?
+
+- Accede al archivo pubspec.yaml de tu proyecto.
+- Desplázate hacia el final del archivo hasta la sección de assets.
+- Comenta las indicaciones predeterminadas y agrega una nueva ruta:
+
+  ```Json
+   assets:
+      - assets/imagenes/
+  ```
+
+- Crea una carpeta llamada assets en la raíz de tu proyecto y, dentro de ella, otra llamada imagenes.
+- Guarda tus imágenes dentro de esta carpeta. Ahora puedes acceder a estas imágenes desde cualquier widget de tu proyecto.
+
+### ¿Cómo agregar imágenes al recetario?
+
+- Modifica el widget Container de tu recetario.
+- Cambia la propiedad child para incluir un widget Image.
+- Si usas imágenes desde URLs, utiliza Image.network. Por ejemplo:
+
+```Dart
+child: Image.network(
+  'https://link-a-tu-imagen.com/lasagna.jpg',
+  fit: BoxFit.cover,
+),
+```
+
+- Guarda el archivo y verifica que las imágenes se visualicen correctamente.
+
+### ¿Cómo ajustar las imágenes al contenedor?
+
+- Usa la propiedad fit con el widget BoxFit para definir cómo la imagen se adapta al contenedor.
+  - Ejemplo: BoxFit.cover hará que la imagen rellene completamente el contenedor ajustándose con un ligero zoom.
+- Otras opciones útiles incluyen:
+  - BoxFit.contain para mantener las proporciones sin recortar.
+  - BoxFit.fill para estirar la imagen y cubrir el espacio.
