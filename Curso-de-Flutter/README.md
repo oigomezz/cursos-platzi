@@ -395,3 +395,40 @@ Aquí aprenderás a estructurar y gestionar pantallas en tu aplicación, integr�
 - **Optimiza el diseño:**
   - Define un máximo de pestañas visibles.
   - Configura colores consistentes con el tema de tu aplicación.
+
+## Creación y Personalización de Widgets en Flutter
+
+Nuestra aplicación se encuentra en una etapa emocionante, donde comenzamos a personalizar y estilizar elementos clave como nuestras tarjetas. En este artículo exploraremos cómo reutilizar widgets, agregar estilos y mejorar la disposición de los elementos para lograr un diseño eficiente y visualmente atractivo.
+
+### ¿Cómo reutilizar widgets en nuestra aplicación?
+
+- Crea un widget personalizado para las tarjetas, nombrándolo, por ejemplo, ReceipesCart. Este widget debe incluir un BuildContext para heredar las propiedades de la aplicación principal.
+- Incluye la estructura de la tarjeta (como un Container) dentro del widget, asegurándote de usar un return para devolverlo.
+- Una vez definido, puedes usar este widget en cualquier parte de tu pantalla, como en el HomeScreen, y reutilizarlo tantas veces como sea necesario.
+
+### ¿Qué ajustes de espaciado y padding se pueden hacer?
+
+- Utiliza Padding para ajustar el espaciado alrededor de las tarjetas. Esto puede configurarse con valores predeterminados o personalizados usando propiedades como left, top, right y bottom.
+- Si los elementos dentro de las tarjetas están demasiado juntos, usa widgets como SizedBox para crear separación adicional, por ejemplo:
+  - Cuatro píxeles entre el título y el autor.
+  - Cuatro píxeles entre el nombre y otros elementos.
+
+### ¿Cómo alinear y centrar elementos en una tarjeta?
+
+- Para alinear verticalmente, usa MainAxisAlignment con valores como center dentro de un widget Column.
+- Para alinear horizontalmente, emplea CrossAxisAlignment configurado como start para que los elementos queden al inicio.
+- Estos ajustes aseguran que los componentes de la tarjeta se vean organizados y equilibrados.
+
+### ¿Qué estilos se pueden agregar al texto?
+
+- Usa la propiedad style en widgets de texto para definir:
+  - Tamaño de fuente (fontSize), por ejemplo, 16 puntos.
+  - Tipografía personalizada, como Quicksand, importándola desde Google Fonts.
+- Aplica estos estilos de manera consistente en todos los textos de la tarjeta, como en el título y el autor.
+
+### ¿Cómo mejorar la apariencia de las tarjetas con contenedores?
+
+- Añade un BoxDecoration a los Container para personalizar su aspecto:
+  - Usa colores temporales como naranja para previsualizar el diseño.
+  - Añade bordes redondeados con la propiedad BorderRadius, ajustando su tamaño según sea necesario.
+- Estas propiedades no solo mejoran el diseño, sino que también permiten visualizar dónde irán las imágenes y otros elementos.
