@@ -1,5 +1,34 @@
 # Curso de Introducción al Desarrollo Backend <!-- omit in toc -->
 
+## Tabla de Contenido<!-- omit in toc -->
+
+- [Los roles del desarrollo backend](#los-roles-del-desarrollo-backend)
+- [Frontend, Backend y Full Stack](#frontend-backend-y-full-stack)
+- [HTTP](#http)
+- [API](#api)
+  - [Estructura REST API](#estructura-rest-api)
+    - [Como funciona?](#como-funciona)
+- [Nube | Cloud](#nube--cloud)
+- [DevOps](#devops)
+- [Cookies y sesiones](#cookies-y-sesiones)
+  - [Funcionalidad](#funcionalidad)
+  - [Seguridad](#seguridad)
+  - [Analíticas](#analíticas)
+  - [Publicidad](#publicidad)
+- [Bases de datos](#bases-de-datos)
+  - [Relacionales (SQL)](#relacionales-sql)
+  - [No Relacionales (No SQL)](#no-relacionales-no-sql)
+  - [Proveedores de DB Administration](#proveedores-de-db-administration)
+- [Qué es el escalamiento?](#qué-es-el-escalamiento)
+  - [Escalamiento vertical](#escalamiento-vertical)
+  - [Escalamiento horizontal](#escalamiento-horizontal)
+- [Replicación](#replicación)
+- [Cache](#cache)
+- [Colas de tareas](#colas-de-tareas)
+  - [¿Por qué se necesita un sistema de colas?](#por-qué-se-necesita-un-sistema-de-colas)
+- [Renderizado](#renderizado)
+- [Server-Side Rendering](#server-side-rendering)
+
 ## Los roles del desarrollo backend
 
 Tu rol principal como Backend Developer va ser escribir código que tengan que ver con:
@@ -15,6 +44,8 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
 - **DB ADMIN**: Gestiona una base de datos, sus políticas y como vamos a disponer de esa DB a través del código y la seguridad que estas deberian tener.
 
 - **SERVER ADMIN**: Se encarga de gestionar la seguridad en los servidores que es donde corre el código a disposición.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Frontend, Backend y Full Stack
 
@@ -42,6 +73,8 @@ El Backend developer también puede estár acercado a otro tipo de roles como:
   - C# → .NET
 
 - **FullStack**: Es un dev que desempeña funciones de frontend y backend, pero generalmente tiene una especialidad en la que ejerce una mayor profundidad de conocimiento.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## HTTP
 
@@ -83,6 +116,8 @@ Rango del status code:
 
 Los códigos de estado brindan información útil para entender el comportamiento de la petición que se le hace al servidor.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## API
 
 Las APIs (Interfaz de Programación de Aplicaciones) son conjuntos de protocolos y herramientas que permiten a diferentes aplicaciones comunicarse entre sí. Facilitan el intercambio de datos y funcionalidades, permitiendo que los desarrolladores integren servicios externos en sus aplicaciones, mejorando la funcionalidad y la experiencia del usuario.
@@ -116,6 +151,8 @@ A través de los endpoints se le pide información al dominio, por lo general se
 | /products/:id        | PATCH  | { }   | { }           | 201    |
 | /products/:id        | DELETE | N/A   | true / false  | 201    |
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Nube | Cloud
 
 La computación en la nube, se refiere a la entrega de servicios informáticos a través de Internet, incluyendo almacenamiento, procesamiento y gestión de datos. En lugar de utilizar hardware y servidores locales, las organizaciones pueden acceder a recursos y aplicaciones a través de proveedores de servicios en la nube, lo que permite una mayor flexibilidad, escalabilidad y ahorro de costos. Los servicios en la nube se dividen comúnmente en tres categorías principales:
@@ -125,6 +162,8 @@ La computación en la nube, se refiere a la entrega de servicios informáticos a
 - SaaS (Software como Servicio).
 
 Esta tecnología permite a las empresas y desarrolladores concentrarse en la innovación y el desarrollo de sus aplicaciones sin preocuparse por la infraestructura subyacente, facilitando el acceso a potentes capacidades informáticas bajo demanda y mejorando la eficiencia operativa.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## DevOps
 
@@ -139,6 +178,8 @@ DevOps también incluye la adopción de prácticas y herramientas de ciclo de vi
 **PaaS** (Platform as a Service) es un modelo de distribución de software en el que el proveedor ofrece una plataforma en la que los usuarios pueden desarrollar, probar, implementar y administrar aplicaciones sin tener que preocuparse por la infraestructura subyacente. Ejemplos de PaaS son servicios como AWS Elastic Beanstalk y Google Firebase.
 
 **IaaS** (Infrastructure as a Service) es un modelo de distribución de infraestructura informática en el que el proveedor ofrece recursos informáticos, como servidores, almacenamiento y redes, como un servicio a través de internet. Los usuarios acceden a estos recursos a través de una interfaz en línea y pueden utilizarlos para desplegar y ejecutar aplicaciones y servicios sin tener que preocuparse por la adquisición ni por el mantenimiento de la infraestructura física. Ejemplos de IaaS son servicios como AWS EC2 y DigitalOcean.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Cookies y sesiones
 
@@ -186,6 +227,8 @@ A través de la plataforma publicitaria de Google, las empresas pueden anunciars
 
 Algunas cookies y otras tecnologías se utilizan para medir el rendimiento de los anuncios y las campañas, así como las tasas de conversión de los anuncios de Google en los sitios que visitas. Por ejemplo, las cookies que empiezan por "gcl" se usan principalmente para ayudar a los anunciantes a determinar cuántas veces los usuarios que hacen clic en sus anuncios acaban realizando una acción en su sitio (por ejemplo, una compra). Las cookies que se usan para medir tasas de conversión no se utilizan para personalizar anuncios. Las cookies "gcl" tienen una duración de 90 días.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Bases de datos
 
 Una base de datos es una herramienta para recopilar y organizar información. Las bases de datos pueden almacenar información sobre personas, productos, pedidos u otras cosas. Muchas bases de datos comienzan como una lista en una hoja de cálculo o en un programa de procesamiento de texto. . Existen dos tipos de bases de datos: Relacionales y No Relacionales.
@@ -223,6 +266,8 @@ Ofrecen servicios para administrar las bases de datos en diferentes bases de dat
 - Mongo Atlas
 - Couchbase Capella DBaaS
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Qué es el escalamiento?
 
 ### Escalamiento vertical
@@ -246,6 +291,8 @@ Soluciona el problema de la disponibilidad. Se tienen varias instancias del mism
 
 Si tenemos la base de datos local en cada servidor va haber un problema dado que no se tienen sincronizados los datos de las distintas bases de datos de los servidores. SOLUCION Gestionar la base de datos fuera de estos servidores. Quizas como un servidor aparte que sirva como DB.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Replicación
 
 La replicación se refiere a la técnica de crear y mantener copias idénticas de ciertos componentes o sistemas de software, con el objetivo de mejorar la disponibilidad, la confiabilidad y el rendimiento de una aplicación. Esta técnica se utiliza para garantizar que un sistema siga funcionando incluso si uno de sus componentes falla o para distribuir la carga de trabajo entre varios servidores para mejorar la capacidad de respuesta.
@@ -256,9 +303,13 @@ La replicación se refiere a la técnica de crear y mantener copias idénticas d
     - Cada vez que se realice escritura en una de las bases de datos, se realiza una sincronización para que el cambio ocurra en todas las bases de datos. Esto es conocido como replicación.
 - Normalmente el backend developer no se encarga de la parte de replicación y gestión de bases de datos, sino en la capa de los servidores y el escalamiento horizontal.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Cache
 
 Es una técnica de almacenamiento temporal de datos de alta velocidad que permite un acceso rápido a la información más frecuentemente solicitada. Al almacenar datos en una memoria más rápida y de acceso más eficiente que la fuente de datos original, el caché mejora significativamente el rendimiento del sistema y reduce la latencia. Los sistemas de caché pueden implementarse a varios niveles, incluyendo memoria caché en procesadores, caché de disco y caché distribuida en redes y aplicaciones web. En el contexto del desarrollo web, el caché se utiliza comúnmente para almacenar respuestas de consultas de bases de datos, resultados de cálculos frecuentes y contenido estático, reduciendo la carga en los servidores y mejorando la experiencia del usuario. Sin embargo, es crucial gestionar adecuadamente la invalidez y la coherencia del caché para asegurar que los usuarios reciban datos actualizados y precisos.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Colas de tareas
 
@@ -272,11 +323,15 @@ Un sistema de colas en backend es una estructura de datos que almacena tareas pe
 4. Priorización de tareas: Un sistema de colas permite priorizar las tareas de acuerdo a la importancia o urgencia, lo que garantiza que las tareas críticas se procesen primero.
 5. Desacoplamiento de procesos: Un sistema de colas permite desacoplar diferentes procesos en el sistema, lo que permite escalar cada proceso de manera independiente y mejora la flexibilidad del sistema.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Renderizado
 
 1. Server-Side Rendering: se renderiza el HTML del cliente totalmente en el lado servidor.
 2. Client-Side Rendering: se renderiza la aplicación completamente en el navegador haciendo uso de Javascript y la gestión del DOM.
 3. Rehydration: HÍBRIDO de las dos anteriores en el que se aprovecha el HTML y los datos renderizados desde el lado servidor, hidratándose con una aplicación javascript que se monta encima de esta. 4. Prerendering: Se renderiza la web en tiempo de construcción creando un artefacto que puede servirse de una manera totalmente estática.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Server-Side Rendering
 
@@ -307,3 +362,5 @@ Un sistema de colas en backend es una estructura de datos que almacena tareas pe
    - Una carga rápida de la página
    - Rendimiento en dispositivos de baja potencia
    - Mayor seguridad en la manipulación de datos y autenticación.
+
+[🡡 volver al inicio](#tabla-de-contenido)
