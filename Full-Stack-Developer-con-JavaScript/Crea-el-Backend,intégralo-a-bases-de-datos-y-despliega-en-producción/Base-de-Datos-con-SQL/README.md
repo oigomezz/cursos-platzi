@@ -1,5 +1,205 @@
 # Curso de Base de Datos con SQL
 
+## Tabla de Contenido<!-- omit in toc -->
+
+- [Sistema de Gestion de Base de Datos](#sistema-de-gestion-de-base-de-datos)
+  - [¿Qué es un sistema de gestión de bases de datos?](#qué-es-un-sistema-de-gestión-de-bases-de-datos)
+  - [¿Cómo se manejan múltiples usuarios en un SGBD?](#cómo-se-manejan-múltiples-usuarios-en-un-sgbd)
+  - [¿Qué lenguaje y herramientas se utilizan en los SGBD?](#qué-lenguaje-y-herramientas-se-utilizan-en-los-sgbd)
+  - [¿Cómo se garantiza la seguridad y autenticación en base de datos?](#cómo-se-garantiza-la-seguridad-y-autenticación-en-base-de-datos)
+  - [¿Cuáles son las características de escalabilidad y rendimiento de un SGBD?](#cuáles-son-las-características-de-escalabilidad-y-rendimiento-de-un-sgbd)
+  - [¿Cómo se asegura la integridad y consistencia de los datos en un SGBD?](#cómo-se-asegura-la-integridad-y-consistencia-de-los-datos-en-un-sgbd)
+  - [¿Qué es la compatibilidad y extensión en un SGBD?](#qué-es-la-compatibilidad-y-extensión-en-un-sgbd)
+- [¿Qué son las bases de datos?](#qué-son-las-bases-de-datos)
+  - [¿Cuáles son las diferencias entre bases de datos relacionales y no relacionales?](#cuáles-son-las-diferencias-entre-bases-de-datos-relacionales-y-no-relacionales)
+  - [¿Cómo manejan la escalabilidad y la integridad los dos tipos?](#cómo-manejan-la-escalabilidad-y-la-integridad-los-dos-tipos)
+  - [¿Cuáles son los casos de uso para cada tipo de base de datos?](#cuáles-son-los-casos-de-uso-para-cada-tipo-de-base-de-datos)
+- [¿Qué es SQL?](#qué-es-sql)
+  - [¿Qué es un esquema en una base de datos?](#qué-es-un-esquema-en-una-base-de-datos)
+  - [¿Cuáles son los objetos de base de datos?](#cuáles-son-los-objetos-de-base-de-datos)
+  - [¿Qué es la terminología CRUD y cómo se aplica?](#qué-es-la-terminología-crud-y-cómo-se-aplica)
+  - [¿Cómo se estructuran las bases de datos?](#cómo-se-estructuran-las-bases-de-datos)
+  - [¿Qué tipos de comandos SQL existen?](#qué-tipos-de-comandos-sql-existen)
+- [Comandos SQL mas importantes](#comandos-sql-mas-importantes)
+  - [¿Cuáles son los tipos de agrupación de comandos en bases de datos?](#cuáles-son-los-tipos-de-agrupación-de-comandos-en-bases-de-datos)
+  - [¿Cómo se implementa el lenguaje de consulta de datos?](#cómo-se-implementa-el-lenguaje-de-consulta-de-datos)
+  - [¿Qué es el lenguaje de definición de estructura?](#qué-es-el-lenguaje-de-definición-de-estructura)
+  - [Sintaxis común para crear y modificar tablas en SQL](#sintaxis-básica-para-crear-una-tabla)
+    - [Creación de tablas](#creación-de-tablas)
+    - [Modificación de tablas](#modificación-de-tablas)
+    - [Eliminar tablas](#eliminar-tablas)
+  - [¿Qué es el lenguaje de manipulación de datos?](#qué-es-el-lenguaje-de-manipulación-de-datos)
+  - [Operaciones comunes en SQL](#operaciones-comunes-en-sql)
+    - [Insertar datos en una tabla](#insertar-datos-en-una-tabla)
+    - [Actualizar datos en una tabla](#actualizar-datos-en-una-tabla)
+    - [Eliminar registros de una tabla](#eliminar-registros-de-una-tabla)
+  - [¿Cómo se gestionan los controles de acceso en bases de datos?](#cómo-se-gestionan-los-controles-de-acceso-en-bases-de-datos)
+  - [¿Qué es el lenguaje de control de transacciones?](#qué-es-el-lenguaje-de-control-de-transacciones)
+- [Operaciones basicas en SQL](#operaciones-basicas-en-sql)
+  - [¿Cómo manipular datos en una base de datos?](#cómo-manipular-datos-en-una-base-de-datos)
+  - [¿Qué son las funciones de agregación y cómo se utilizan?](#qué-son-las-funciones-de-agregación-y-cómo-se-utilizan)
+  - [¿Cómo aplicar reglas condicionales avanzadas?](#cómo-aplicar-reglas-condicionales-avanzadas)
+  - [¿Qué son las uniones (joins) y cómo se aplican?](#qué-son-las-uniones-joins-y-cómo-se-aplican)
+  - [¿Cómo implementar condicionales y filtrados avanzados?](#cómo-implementar-condicionales-y-filtrados-avanzados)
+- [Modelo Entidad Relación (ER)](#modelo-entidad-relación-er)
+  - [¿Cómo diseñar una base de datos usando el modelo entidad-relación?](#cómo-diseñar-una-base-de-datos-usando-el-modelo-entidad-relación)
+  - [¿Qué son las entidades y sus atributos?](#qué-son-las-entidades-y-sus-atributos)
+  - [¿Cuáles son los tipos de atributos?](#cuáles-son-los-tipos-de-atributos)
+  - [¿Cómo se representan las relaciones entre las entidades?](#cómo-se-representan-las-relaciones-entre-las-entidades)
+  - [¿Cómo interpretar un diagrama de entidad-relación?](#cómo-interpretar-un-diagrama-de-entidad-relación)
+- [Normalización](#normalización)
+  - [¿Qué es la normalización en bases de datos?](#qué-es-la-normalización-en-bases-de-datos)
+  - [¿En qué consiste la primera forma normal?](#en-qué-consiste-la-primera-forma-normal)
+  - [¿Cómo aplicamos la segunda forma?](#cómo-aplicamos-la-segunda-forma)
+  - [¿Qué garantiza la tercera forma?](#qué-garantiza-la-tercera-forma)
+    - [¿Qué es la Forma Normal de Boyce-Codd (BCNF)?](#qué-es-la-forma-normal-de-boyce-codd-bcnf)
+  - [¿Cómo se aplica la cuarta y quinta forma normal?](#cómo-se-aplica-la-cuarta-y-quinta-forma-normal)
+- [Tipos de datos en SQL](#tipos-de-datos-en-sql)
+  - [¿Qué son los tipos de datos y por qué son importantes?](#qué-son-los-tipos-de-datos-y-por-qué-son-importantes)
+  - [¿Cómo se clasifican los tipos de datos?](#cómo-se-clasifican-los-tipos-de-datos)
+    - [¿Cuáles son los tipos de datos numéricos más comunes?](#cuáles-son-los-tipos-de-datos-numéricos-más-comunes)
+    - [¿Cuáles son los tipos de datos de texto más utilizados?](#cuáles-son-los-tipos-de-datos-de-texto-más-utilizados)
+    - [¿Qué tipos de datos de tiempo existen y cuándo usarlos?](#qué-tipos-de-datos-de-tiempo-existen-y-cuándo-usarlos)
+    - [¿Por qué es vital seleccionar correctamente el tipo de datos?](#por-qué-es-vital-seleccionar-correctamente-el-tipo-de-datos)
+- [¿Cómo crear una base de datos en SQL?](#cómo-crear-una-base-de-datos-en-sql)
+  - [¿Por qué es crucial seguir buenas prácticas al crear bases de datos?](#por-qué-es-crucial-seguir-buenas-prácticas-al-crear-bases-de-datos)
+  - [¿Cómo crear una base de datos y tablas en SQL?](#cómo-crear-una-base-de-datos-y-tablas-en-sql)
+  - [Sintaxis básica para crear una tabla](#sintaxis-básica-para-crear-una-tabla)
+  - [¿Cómo gestionar las relaciones entre tablas con foreign keys?](#cómo-gestionar-las-relaciones-entre-tablas-con-foreign-keys)
+  - [¿Qué considerar al usar distintos motores de bases de datos?](#qué-considerar-al-usar-distintos-motores-de-bases-de-datos)
+- [Buenas practicas de bases de datos con SQL](#buenas-practicas-de-bases-de-datos-con-sql)
+  - [¿Qué es la normalización y por qué es importante?](#qué-es-la-normalización-y-por-qué-es-importante)
+  - [¿Cómo se aplica la primera forma normal?](#cómo-se-aplica-la-primera-forma-normal)
+  - [¿Qué implica la segunda forma normal?](#qué-implica-la-segunda-forma-normal)
+  - [¿Cómo se configura la tercera forma normal?](#cómo-se-configura-la-tercera-forma-normal)
+  - [¿Cómo organizar información de direcciones?](#cómo-organizar-información-de-direcciones)
+- [INSERT](#insert)
+  - [¿Cómo realizar inserciones de datos en bases de datos?](#cómo-realizar-inserciones-de-datos-en-bases-de-datos)
+  - [¿Qué son las sentencias INSERT INTO?](#qué-son-las-sentencias-insert-into)
+  - [¿Cómo manejar valores por defecto?](#cómo-manejar-valores-por-defecto)
+  - [¿Cómo trabajar con claves foráneas?](#cómo-trabajar-con-claves-foráneas)
+  - [¿Cómo verificar las inserciones?](#cómo-verificar-las-inserciones)
+  - [¿Qué hacer si se cometen errores?](#qué-hacer-si-se-cometen-errores)
+- [SELECT](#select)
+  - [¿Cómo utilizar la sentencia SELECT \* FROM en SQL?](#cómo-utilizar-la-sentencia-select--from-en-sql)
+  - [¿Cómo funciona la sentencia SELECT \* FROM?](#cómo-funciona-la-sentencia-select--from)
+  - [¿Cómo especificar campos en la consulta?](#cómo-especificar-campos-en-la-consulta)
+  - [¿Cómo ordenar los resultados de la consulta?](#cómo-ordenar-los-resultados-de-la-consulta)
+  - [¿Qué evitar al escribir consultas SQL?](#qué-evitar-al-escribir-consultas-sql)
+- [DELETE](#delete)
+  - [¿Cómo evitar desastres al eliminar datos en SQL?](#cómo-evitar-desastres-al-eliminar-datos-en-sql)
+  - [¿Cuál es la errata más común al utilizar DELETE?](#cuál-es-la-errata-más-común-al-utilizar-delete)
+  - [¿Cómo poner en práctica DELETE de manera segura?](#cómo-poner-en-práctica-delete-de-manera-segura)
+  - [¿Qué otras sentencias SQL debes conocer?](#qué-otras-sentencias-sql-debes-conocer)
+- [UPDATE](#update)
+  - [¿Cómo gestionar errores en bases de datos?](#cómo-gestionar-errores-en-bases-de-datos)
+  - [¿Qué comando utilizar para actualizar información?](#qué-comando-utilizar-para-actualizar-información)
+  - [¿Cómo confirmar los cambios realizados?](#cómo-confirmar-los-cambios-realizados)
+  - [¿Qué precauciones tomar al modificar datos?](#qué-precauciones-tomar-al-modificar-datos)
+- [WHERE](#where)
+  - [¿Por qué utilizar MySQL para análisis de datos?](#por-qué-utilizar-mysql-para-análisis-de-datos)
+  - [¿Cómo utilizar la sentencia WHERE en MySQL?](#cómo-utilizar-la-sentencia-where-en-mysql)
+  - [¿Qué operadores lógicos se pueden utilizar?](#qué-operadores-lógicos-se-pueden-utilizar)
+  - [¿Cómo se usan los operadores para manipular datos de texto?](#cómo-se-usan-los-operadores-para-manipular-datos-de-texto)
+  - [¿Qué es la cláusula BETWEEN?](#qué-es-la-cláusula-between)
+  - [¿Cómo se pueden optimizar las consultas SQL?](#cómo-se-pueden-optimizar-las-consultas-sql)
+- [LIKE](#like)
+  - [¿Cómo filtrar datos usando la cláusula WHERE y la palabra reservada LIKE en SQL?](#cómo-filtrar-datos-usando-la-cláusula-where-y-la-palabra-reservada-like-en-sql)
+  - [¿Cómo seleccionar nombres que comienzan con una letra específica?](#cómo-seleccionar-nombres-que-comienzan-con-una-letra-específica)
+  - [¿Cómo encontrar apellidos que terminan en una letra específica?](#cómo-encontrar-apellidos-que-terminan-en-una-letra-específica)
+  - [¿Cómo mostrar únicamente las columnas necesarias en una consulta?](#cómo-mostrar-únicamente-las-columnas-necesarias-en-una-consulta)
+  - [¿Cómo trabajar con múltiples filtros en una consulta?](#cómo-trabajar-con-múltiples-filtros-en-una-consulta)
+  - [Consejos para optimizar tus consultas SQL](#consejos-para-optimizar-tus-consultas-sql)
+- [Cláusulas de Comparación Textual en SQL](#cláusulas-de-comparación-textual-en-sql)
+  - [¿Cómo utilizar operadores lógicos en análisis de datos?](#cómo-utilizar-operadores-lógicos-en-análisis-de-datos)
+  - [¿Qué es un operador lógico y cómo se utiliza?](#qué-es-un-operador-lógico-y-cómo-se-utiliza)
+  - [¿Cómo utilizar el operador AND y el operador OR?](#cómo-utilizar-el-operador-and-y-el-operador-or)
+  - [¿Cómo manejar varias condiciones de búsqueda?](#cómo-manejar-varias-condiciones-de-búsqueda)
+  - [¿Cómo trabajar con valores nulos en SQL?](#cómo-trabajar-con-valores-nulos-en-sql)
+  - [¿Cómo eliminar los datos nulos de los resultados?](#cómo-eliminar-los-datos-nulos-de-los-resultados)
+  - [¿Y si queremos ver los datos nulos?](#y-si-queremos-ver-los-datos-nulos)
+  - [¿Cómo aplicar filtros con NOT IN?](#cómo-aplicar-filtros-con-not-in)
+- [COUNT](#count)
+  - [¿Cómo generar informes eficaces con SQL en entornos de Business Intelligence?](#cómo-generar-informes-eficaces-con-sql-en-entornos-de-business-intelligence)
+  - [¿Cómo contar estudiantes por curso?](#cómo-contar-estudiantes-por-curso)
+  - [¿Cómo filtrar estudiantes con más de dos cursos?](#cómo-filtrar-estudiantes-con-más-de-dos-cursos)
+  - [¿Cómo calcular salarios de instructores con operaciones aritméticas?](#cómo-calcular-salarios-de-instructores-con-operaciones-aritméticas)
+  - [¿Cómo calcular el promedio de salarios?](#cómo-calcular-el-promedio-de-salarios)
+- [MIN y MAX](#min-y-max)
+  - [¿Cómo aplicar las funciones de mínimo y máximo en análisis de datos?](#cómo-aplicar-las-funciones-de-mínimo-y-máximo-en-análisis-de-datos)
+  - [¿Cómo identificar la edad mínima y máxima de los estudiantes?](#cómo-identificar-la-edad-mínima-y-máxima-de-los-estudiantes)
+  - [¿Qué es la función round y cómo se utiliza?](#qué-es-la-función-round-y-cómo-se-utiliza)
+  - [¿Existen otras operaciones aritméticas útiles para el análisis de datos?](#existen-otras-operaciones-aritméticas-útiles-para-el-análisis-de-datos)
+  - [¿Cómo practicar y expandir tus conocimientos?](#cómo-practicar-y-expandir-tus-conocimientos)
+- [GROUP BY, HAVING y CASE](#group-by-having-y-case)
+  - [¿Cómo manejar grandes volúmenes de datos en bases de datos multirrelacionales?](#cómo-manejar-grandes-volúmenes-de-datos-en-bases-de-datos-multirrelacionales)
+  - [¿Qué es el GROUP BY y cómo aplicarlo?](#qué-es-el-group-by-y-cómo-aplicarlo)
+  - [¿Cómo utilizar el HAVING COUNT para filtrar agrupaciones?](#cómo-utilizar-el-having-count-para-filtrar-agrupaciones)
+  - [¿Cómo clasificar categorías con CASE WHEN?](#cómo-clasificar-categorías-con-case-when)
+  - [¿Cómo expandir los criterios de clasificación?](#cómo-expandir-los-criterios-de-clasificación)
+- [Tipos de JOIN en SQL](#tipos-de-join-en-sql)
+  - [¿Qué son los tipos de "join" en SQL?](#qué-son-los-tipos-de-join-en-sql)
+  - [¿Cómo funciona el Inner Join?](#cómo-funciona-el-inner-join)
+  - [¿Qué hace un Left Join?](#qué-hace-un-left-join)
+  - [¿Cómo opera el Right Join?](#cómo-opera-el-right-join)
+  - [¿Qué es el Full Outer Join?](#qué-es-el-full-outer-join)
+  - [¿Cómo utilizar el Cross Join?](#cómo-utilizar-el-cross-join)
+- [INNER JOIN, LEFT JOIN, RIGHT JOIN y FULL JOIN](#inner-join-left-join-right-join-y-full-join)
+  - [¿Cómo implementar lo aprendido sobre joins en consola?](#cómo-implementar-lo-aprendido-sobre-joins-en-consola)
+  - [¿Cómo recrear la base de datos?](#cómo-recrear-la-base-de-datos)
+  - [¿Cómo ejecutar joins en consola?](#cómo-ejecutar-joins-en-consola)
+  - [¿Cómo realizar un join de tipo Right, Left o Full Outer?](#cómo-realizar-un-join-de-tipo-right-left-o-full-outer)
+  - [¿Por qué es importante el nombramiento adecuado de tablas en joins?](#por-qué-es-importante-el-nombramiento-adecuado-de-tablas-en-joins)
+- [Vistas Materializadas en SQL](#vistas-materializadas-en-sql)
+  - [¿Por qué son importantes las vistas en la transformación de datos?](#por-qué-son-importantes-las-vistas-en-la-transformación-de-datos)
+  - [¿Cómo se crea una vista?](#cómo-se-crea-una-vista)
+  - [¿Cómo se optimiza una vista para mostrar solo datos necesarios?](#cómo-se-optimiza-una-vista-para-mostrar-solo-datos-necesarios)
+  - [¿Cómo se elimina una vista?](#cómo-se-elimina-una-vista)
+- [Vistas Materializadas y Temporales en SQL](#vistas-materializadas-y-temporales-en-sql)
+  - [¿Cómo optimizar los procesos de ETL mediante vistas temporales y materializadas?](#cómo-optimizar-los-procesos-de-etl-mediante-vistas-temporales-y-materializadas)
+  - [¿Qué son las vistas temporales y cómo se utilizan?](#qué-son-las-vistas-temporales-y-cómo-se-utilizan)
+  - [¿Por qué considerar las vistas materializadas?](#por-qué-considerar-las-vistas-materializadas)
+  - [Ventajas de las vistas materializadas en el soporte técnico](#ventajas-de-las-vistas-materializadas-en-el-soporte-técnico)
+- [Expresiones de Tablas Comunes (CTE) en SQL](#expresiones-de-tablas-comunes-cte-en-sql)
+  - [¿Qué es el proceso de transformación de datos?](#qué-es-el-proceso-de-transformación-de-datos)
+  - [¿Qué son las CTE en SQL?](#qué-son-las-cte-en-sql)
+  - [¿Cómo se estructura una CTE?](#cómo-se-estructura-una-cte)
+  - [¿Cómo se usan las CTE con múltiples subconsultas?](#cómo-se-usan-las-cte-con-múltiples-subconsultas)
+  - [¿Cómo enriquecer nuestras consultas usando CTE?](#cómo-enriquecer-nuestras-consultas-usando-cte)
+- [Procedimientos Almacenados en SQL](#procedimientos-almacenados-en-sql)
+  - [¿Qué son los procedimientos almacenados y por qué son útiles?](#qué-son-los-procedimientos-almacenados-y-por-qué-son-útiles)
+  - [Creación de un procedimiento almacenado en SQL Server](#creación-de-un-procedimiento-almacenado-en-sql-server)
+  - [Creación de un procedimiento almacenado en MySQL](#creación-de-un-procedimiento-almacenado-en-mysql)
+  - [¿Cómo se ejecutan los procedimientos almacenados?](#cómo-se-ejecutan-los-procedimientos-almacenados)
+  - [¿Cómo empezar a practicar procedimientos almacenados?](#cómo-empezar-a-practicar-procedimientos-almacenados)
+- [Gestión de Variables y Manejo de Excepciones](#gestión-de-variables-y-manejo-de-excepciones)
+  - [¿Cómo crear procedimientos almacenados con parámetros de entrada y salida?](#cómo-crear-procedimientos-almacenados-con-parámetros-de-entrada-y-salida)
+  - [¿Qué son los parámetros de entrada y salida?](#qué-son-los-parámetros-de-entrada-y-salida)
+  - [¿Cómo influye el uso de variables y manejo de excepciones?](#cómo-influye-el-uso-de-variables-y-manejo-de-excepciones)
+  - [¿Cuál es el proceso para crear un procedimiento almacenado?](#cuál-es-el-proceso-para-crear-un-procedimiento-almacenado)
+- [Respaldos y Restauración de Bases de Datos](#respaldos-y-restauración-de-bases-de-datos)
+  - [¿Qué es la copia de seguridad y restauración de datos?](#qué-es-la-copia-de-seguridad-y-restauración-de-datos)
+  - [¿Cuándo se deberían realizar las copias de seguridad?](#cuándo-se-deberían-realizar-las-copias-de-seguridad)
+  - [¿Cómo se pueden automatizar estas tareas?](#cómo-se-pueden-automatizar-estas-tareas)
+  - [¿Cómo exportar e importar datos?](#cómo-exportar-e-importar-datos)
+  - [Pasos para la exportación de datos](#pasos-para-la-exportación-de-datos)
+  - [Pasos para la importación de datos](#pasos-para-la-importación-de-datos)
+  - [¿Cómo mejorar la práctica de backups?](#cómo-mejorar-la-práctica-de-backups)
+- [Potenciando los Datos en la Nube: Data Science, Big Data, ML e AI](#potenciando-los-datos-en-la-nube-data-science-big-data-ml-e-ai)
+  - [¿Qué es la inteligencia de negocios y cómo puede beneficiar a una empresa?](#qué-es-la-inteligencia-de-negocios-y-cómo-puede-beneficiar-a-una-empresa)
+  - [¿En qué consiste el Big Data y por qué es relevante?](#en-qué-consiste-el-big-data-y-por-qué-es-relevante)
+  - [¿Cuál es el papel de la ciencia de datos en la industria moderna?](#cuál-es-el-papel-de-la-ciencia-de-datos-en-la-industria-moderna)
+  - [¿Cómo aprovecha Machine Learning los datos?](#cómo-aprovecha-machine-learning-los-datos)
+  - [Arquitecturas y plataformas en el procesamiento de datos](#arquitecturas-y-plataformas-en-el-procesamiento-de-datos)
+  - [¿Cómo realizar una migración de on-premise a cloud eficientemente?](#cómo-realizar-una-migración-de-on-premise-a-cloud-eficientemente)
+- [SQL para Análisis de Datos](#sql-para-análisis-de-datos)
+  - [¿Cómo visualizar datos de manera efectiva?](#cómo-visualizar-datos-de-manera-efectiva)
+  - [¿Qué plataformas se pueden utilizar?](#qué-plataformas-se-pueden-utilizar)
+  - [¿Cuáles son los componentes esenciales de un Dashboard en Power BI?](#cuáles-son-los-componentes-esenciales-de-un-dashboard-en-power-bi)
+  - [¿Cómo se seleccionan y visualizan los datos?](#cómo-se-seleccionan-y-visualizan-los-datos)
+  - [¿Qué más puedo explorar en Power BI?](#qué-más-puedo-explorar-en-power-bi)
+  - [Riqueza de los datos y su impacto](#riqueza-de-los-datos-y-su-impacto)
+
 ## Sistema de Gestion de Base de Datos
 
 ### ¿Qué es un sistema de gestión de bases de datos?
@@ -43,6 +243,8 @@ La compatibilidad y extensión se refieren a las capacidades de interoperabilida
 
 Entender estas funcionalidades y características te permitirá gestionar bases de datos de manera eficiente y segura, facilitando la interacción y manipulación de grandes volúmenes de información dentro de diferentes entornos tecnológicos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## ¿Qué son las bases de datos?
 
 Las bases de datos son sistemas esenciales en la gestión de información que nos permiten almacenar, consultar, modificar y eliminar datos con eficiencia. Su relevancia en el análisis de información es tal que podríamos compararlas con un archivo de Excel, donde las filas representan registros y las columnas atributos. Sin embargo, cuando hablamos de bases de datos, estas se dividen principalmente en dos categorías: relacionales y no relacionales. Comprender las diferencias entre estos tipos de bases de datos es crucial para utilizar el tipo correcto en cada aplicación.
@@ -66,6 +268,8 @@ Las bases de datos relacionales son ideales para aplicaciones que requieren un m
 En contraste, las bases de datos no relacionales son adecuadas para el almacenamiento de datos no estructurados o semi-estructurados, como los que generan las aplicaciones web, redes sociales y algunos proyectos de Big Data. Estas bases sobresalen en el manejo de datos vectoriales y otros formatos que requieren flexibilidad. Algunos motores de bases de datos no relacionales populares son MongoDB, Cassandra, Redis y DynamoDB.
 
 ¡Ahora que hemos explorado las diferencias, características y aplicaciones de ambos tipos de bases de datos, estás listo para profundizar en las bases de datos relacionales y en el lenguaje de consulta SQL! Sigue aprendiendo y perfeccionando tus habilidades para sacar el máximo provecho a las bases de datos y su amplia aplicación en el mundo digital.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## ¿Qué es SQL?
 
@@ -113,6 +317,8 @@ Para manejar una base de datos de manera efectiva, SQL tiene diferentes tipos de
 5. DQL (Data Query Language): Interactúa principalmente con el comando SELECT para recuperar datos.
 
 Con esta estructura de comandos, puedes realizar operaciones necesarias para gestionar, consultar y mantener datos en cualquier base de datos relacional.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Comandos SQL mas importantes
 
@@ -194,6 +400,8 @@ El Lenguaje de Control de Transacciones está diseñado para manejar operaciones
 
 Conocer y dominar estos comandos no solo te proporciona herramientas esenciales para trabajar con bases de datos, sino que también optimiza esfuerzos y asegura precisión en la gestión de datos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Operaciones basicas en SQL
 
 ### ¿Cómo manipular datos en una base de datos?
@@ -264,6 +472,8 @@ Estas operaciones nos proporcionan el control necesario para extraer y manipular
 
 Explorar estas técnicas y funciones es clave para cualquier profesional que desee aprovechar al máximo su habilidad de gestionar bases de datos. Persiste en tu aprendizaje y práctica para poder implementar consultas eficientes y efectivas. Siempre hay nuevas formas de optimizar y personalizar la búsqueda y manipulación de información.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Modelo Entidad Relación (ER)
 
 ### ¿Cómo diseñar una base de datos usando el modelo entidad-relación?
@@ -327,6 +537,8 @@ La correcta interpretación de un diagrama ER es crítica para la implementació
 
 En conclusión, el modelo ER es una herramienta esencial que permite estructurar el diseño de bases de datos comprensiblemente, abarcando tanto las entidades como sus relaciones, facilitando así una implementación más eficaz y óptima.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Normalización
 
 ### ¿Qué es la normalización en bases de datos?
@@ -372,6 +584,8 @@ La cuarta y quinta formas normales llevan a un nivel más profundo la separació
 
 La aplicación de estas formas asegura bases de datos robustas, evitando duplicados y manteniendo integridad, crucial para la calidad y eficiencia de sistemas de gestión de datos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Tipos de datos en SQL
 
 ### ¿Qué son los tipos de datos y por qué son importantes?
@@ -416,6 +630,8 @@ La elección del tipo de datos impacta directamente en la eficiencia y calidad d
 - **Errores en procesamiento:** Dificultad para realizar cálculos y reportes precisos.
 
 Definir adecuadamente el tipo de datos desde la fase inicial de diseño, ya sea en la creación de tablas o procedimientos almacenados, es esencial. Esto garantiza la correcta interpretación y manipulación de cualquier información solicitada. También se anima a exploradores de datos a comentar y aportar sobre tipos de datos no mencionados o dudas sobre los explicados. Esta interacción es fundamental para enriquecer el aprendizaje y comprensión global del manejo de datos.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## ¿Cómo crear una base de datos en SQL?
 
@@ -475,6 +691,8 @@ No todos los comandos son compatibles con todos los motores de bases de datos. P
 - SQLite no soporta directamente estas funcionalidades, pero se pueden implementar mediante procedimientos almacenados.
 
 Es fundamental adaptar el código según el motor de base de datos usado y saber que algunas funcionalidades pueden variar o requerir soluciones alternativas.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Buenas practicas de bases de datos con SQL
 
@@ -558,6 +776,8 @@ Cada empresa puede optar por estructuras diferentes, pero la justificación en b
 
 La normalización no solo maximiza la eficiencia del almacenamiento de datos, sino que también mejora las operaciones de transformación, análisis y calidad de los mismos, otorgando un sistema robusto y eficiente.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## INSERT
 
 ### ¿Cómo realizar inserciones de datos en bases de datos?
@@ -619,6 +839,8 @@ Los errores son parte del aprendizaje. Intenta insertar información incorrecta 
 2. Juega con los datos: Experimenta con diferentes escenarios y relaciones dentro de tu base de datos.
 3. Explora errores: Inserta datos inapropiados o en formatos incorrectos para ver cómo tu base de datos maneja los errores.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## SELECT
 
 ### ¿Cómo utilizar la sentencia SELECT \* FROM en SQL?
@@ -664,6 +886,8 @@ O para orden descendente:
 Al trabajar con SQL, es importante prestar atención a la sensibilidad de las claves. Algunos motores de bases de datos son "keyssensitive", lo que significa que debes escribir los nombres de los atributos exactamente como los registraste en tu base de datos. Los errores de sintaxis, como llamar a un campo de forma incorrecta, son comunes, por lo que debes ser cuidadoso con la escritura.
 
 Si ves un error como un campo no existente, verifica que el nombre esté bien escrito y que coincida con la base de datos. Por ejemplo, si un campo se registró como "fecha_carga", no funcionará si lo escribes de la forma "fecha-carga".
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## DELETE
 
@@ -718,6 +942,8 @@ Además de DELETE, hay otras sentencias SQL importantes que debes manejar con pr
 
 Con este conocimiento, podrás evitar errores críticos en tus proyectos de datos. Ten siempre presente revisar la sintaxis detalladamente y comprender el impacto de tus acciones. Esto no solo garantiza la integridad de los datos, sino que también eleva tu habilidad profesional en el manejo de bases de datos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## UPDATE
 
 ### ¿Cómo gestionar errores en bases de datos?
@@ -751,6 +977,8 @@ Modificar información en una base de datos es una tarea sensible que conlleva a
 - Pruebas en entornos seguros: Cuando sea posible, realiza pruebas en un entorno de desarrollo o pruebas para verificar los cambios antes de aplicarlos en producción.
 
 Un mantenimiento adecuado de la base de datos garantiza la integridad y confiabilidad de los datos, lo cual es crucial para cualquier organización que dependa de la información almacenada para su operación diaria.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## WHERE
 
@@ -789,6 +1017,8 @@ Optimizar consultas SQL es crucial para mantener un rendimiento eficiente en bas
 - Índices: Implementar índices para columnas usadas frecuentemente en la cláusula WHERE, ya que aceleran el acceso a los datos.
 - Consultas específicas: Evitar el uso de SELECT \* en favor de especificar solo las columnas necesarias.
 - Limitar resultados: Si se requieren menos registros, LIMIT puede reducir la carga de las consultas.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## LIKE
 
@@ -846,6 +1076,8 @@ A veces se requiere aplicar varios criterios simultáneamente. Imagina que neces
 2. Seleccionar solo columnas necesarias: Evita el uso de SELECT \* para reducir la carga del servidor y el tiempo de respuesta.
 3. Practicar con diferentes tablas: Familiarízate con la diversidad de tus tablas para perfeccionar tus habilidades en SQL.
 4. Pruebas continuas: Realiza y modifica consultas según diferentes escenarios para validar resultados y eficiencia.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Cláusulas de Comparación Textual en SQL
 
@@ -911,6 +1143,8 @@ El operador NOT IN permite excluir ciertos valores específicos de nuestros resu
 
 Esta consulta devolverá información de todos los estudiantes, excepto aquellos que tengan exactamente veinte años.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## COUNT
 
 ### ¿Cómo generar informes eficaces con SQL en entornos de Business Intelligence?
@@ -962,6 +1196,8 @@ Mantener consistencia y limpieza en el nombre de las columnas es fundamental. Ev
 
 Practicar y experimentar con diferentes combinaciones es esencial para desarrollar habilidades avanzadas en SQL y BI. Imagina que tu jefe te pide diferentes informes y utiliza estos métodos para resolver problemas reales en un entorno de datos dinámico.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## MIN y MAX
 
 ### ¿Cómo aplicar las funciones de mínimo y máximo en análisis de datos?
@@ -994,6 +1230,8 @@ Las operaciones aritméticas como la resta y la división también son sumamente
 ### ¿Cómo practicar y expandir tus conocimientos?
 
 ¡La práctica es esencial! Te invitamos a que descubras más sobre estas funciones y operadores mediante la ejecución de consultas en tu base de datos. También puedes investigar más consultando recursos en línea o asistiendo a foros especializados. Considera utilizar herramientas como ChatGPT a fin de resolver dudas específicas sobre cómo implementar estas técnicas en SQL Server. Al fin y al cabo, dominar estas funciones te ayudará a convertir datos en información valiosa para la toma de decisiones.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## GROUP BY, HAVING y CASE
 
@@ -1051,6 +1289,8 @@ Para escenarios más complejos, donde los criterios combinan atributos distintos
 
 Aquí, los estudiantes llamados María también se clasificarán en Team A, mientras que todos los demás irán al Team C.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Tipos de JOIN en SQL
 
 ### ¿Qué son los tipos de "join" en SQL?
@@ -1096,6 +1336,8 @@ Imaginemos una tabla de productos y otra de marcas. Al aplicar un Cross Join, ca
     CROSS JOIN marcas;
 
 Los "joins" son herramientas poderosas en SQL que permiten relacionar distintos elementos de bases de datos, facilitando la creación de reportes detallados y entendimientos profundos de los datos.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## INNER JOIN, LEFT JOIN, RIGHT JOIN y FULL JOIN
 
@@ -1173,6 +1415,8 @@ El uso de alias para tablas puede simplificar las consultas. Sin embargo, para p
 - Evita nombres genéricos que no den contexto.
 - Asegúrate de que el nombramiento sea coherente en todo tu código.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Vistas Materializadas en SQL
 
 ### ¿Por qué son importantes las vistas en la transformación de datos?
@@ -1208,6 +1452,8 @@ Si una vista ya no es necesaria o fue creada por error, eliminarla es simple usa
     DROP VIEW vista_estudiantes_ligera;
 
 El comando DROP es el mismo utilizado para la eliminación de tablas, añadiendo la palabra reservada VIEW para indicarle que aplicaremos la acción sobre una vista.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Vistas Materializadas y Temporales en SQL
 
@@ -1256,6 +1502,8 @@ Al realizar experimentos con vistas temporales y materializadas, te sugerimos se
 - Prueba diferentes comandos de creación de vistas en el motor de base de datos que estés utilizando.
 - Detecta y resuelve cualquier incompatibilidad de palabras reservadas específicas de tu sistema. Cada motor SQL (como PostgreSQL, MySQL, etc.) puede tener variaciones en el uso de palabras clave.
 - Comparte hallazgos y desafíos con tus colegas para enriquecerte mutuamente con diferentes experiencias y conocimientos.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Expresiones de Tablas Comunes (CTE) en SQL
 
@@ -1307,6 +1555,8 @@ Al usar CTE, es importante recordar que:
 ### ¿Cómo enriquecer nuestras consultas usando CTE?
 
 Además de simplificar nuestro código, el uso de CTE fomenta la experimentación con nuevas consultas combinando diversas subconsultas. Se invita a la comunidad de desarrolladores a interactuar con estas herramientas, creando consultas avanzadas y compartiendo sus soluciones para el enriquecimiento mutuo.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Procedimientos Almacenados en SQL
 
@@ -1368,6 +1618,8 @@ La práctica es esencial para dominar la creación y uso de procedimientos almac
 1. Elige un entorno SQL: Puedes escoger plataformas gratuitas como MySQL Workbench, SQL Server Management Studio, o entornos en línea como DB-Fiddle.
 2. Prueba diferentes consultas: Inserta, actualiza o elimina registros utilizando procedimientos almacenados.
 3. Experimenta con condicionales: Asegúrate de usar condiciones para evitar operar en datos incorrectos.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Gestión de Variables y Manejo de Excepciones
 
@@ -1445,6 +1697,8 @@ Ejemplo de sintaxis en MySQL
 
 Este ejemplo ilustra un procedimiento almacenado que inserta datos y calcula un promedio. En caso de error, el rollback garantiza que no se realicen cambios parciales en los datos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Respaldos y Restauración de Bases de Datos
 
 ### ¿Qué es la copia de seguridad y restauración de datos?
@@ -1490,6 +1744,8 @@ Para fortalecer tus habilidades en la gestión de copias de seguridad:
 - **Explora nuevas alternativas:** Investiga y prueba diferentes soluciones de restauración de datos, tanto locales como en la nube.
 - **Utiliza recursos adicionales:** Revisa archivos y materiales proporcionados durante el curso para afianzar tus conocimientos prácticos.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Potenciando los Datos en la Nube: Data Science, Big Data, ML e AI
 
 ### ¿Qué es la inteligencia de negocios y cómo puede beneficiar a una empresa?
@@ -1517,6 +1773,8 @@ En el ámbito de la arquitectura de datos, existen múltiples enfoques que se ad
 Imagínate tener tus datos en una arquitectura on-premise usando SQL y herramientas como Integration Service para la transformación, y Analysis Service para el almacenamiento. Transferir este setup a la nube en Azure podría implicar colocar los datos en un Data Lake, emplear DataBricks para la transformación utilizando lenguajes como Python o R, y almacenar resultados en Synapsis para su análisis posterior, utilizando tableros de Power BI conectados a la nube. Esta transición, cuando se lleva a cabo cuidadosamente, no solo moderniza la infraestructura, sino que aumenta la accesibilidad y eficiencia del manejo de datos.
 
 La importancia de un ciclo robusto de procesamiento y transformación de datos no puede subestimarse en la era de la información. Conocer y emplear las herramientas adecuadas garantiza que las empresas no solo sobrevivan, sino que prosperen en un entorno competitivo y en constante cambio.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## SQL para Análisis de Datos
 
@@ -1567,3 +1825,5 @@ Los datos son esenciales no solo en tecnología, sino en todos los campos comerc
 **Calidad y valor:** Asegúrate de que la información sea real, relevante y de valor para la empresa.
 
 En resumen, el manejo eficiente de datos te permite no solo entender el presente, sino prever tendencias futuras para una toma de decisiones más informada y estratégica.
+
+[🡡 volver al inicio](#tabla-de-contenido)
