@@ -27,24 +27,24 @@
 
 #### Configura tu entorno de trabajo
 
-1. [Curso de Configuración de Entorno de Desarrollo en Windows](Configuración-Entorno-Windows/README.md)
-2. [Curso de Configuración de Entorno de Desarrollo en Linux](Configuración-Entorno-Linux/README.md)
-3. [Curso de Configuración de Entorno de Desarrollo en macOS](Configuración-Entorno-macOS/README.md)
-4. [Curso de Introducción a la Terminal y Línea de Comandos](Introduccion-Terminal/README.md)
-5. [Curso de Git y GitHub](Introduccion-Terminal/README.md)
+1. [Curso de Configuración de Entorno de Desarrollo en Windows](Full-Stack-Developer-con-JavaScript/Configura-tu-entorno-de-trabajo/Configuración-Entorno-Windows/README.md)
+2. [Curso de Configuración de Entorno de Desarrollo en Linux](Full-Stack-Developer-con-JavaScript/Configura-tu-entorno-de-trabajo/Configuración-Entorno-Linux/README.md)
+3. [Curso de Configuración de Entorno de Desarrollo en macOS](Full-Stack-Developer-con-JavaScript/Configura-tu-entorno-de-trabajo/Configuración-Entorno-macOS/README.md)
+4. [Curso de Introducción a la Terminal y Línea de Comandos](Full-Stack-Developer-con-JavaScript/Configura-tu-entorno-de-trabajo/Introduccion-Terminal/README.md)
+5. [Curso de Git y GitHub](Full-Stack-Developer-con-JavaScript/Configura-tu-entorno-de-trabajo/Introduccion-Terminal/README.md)
 
 #### Desarrolla el frontend de tu aplicación
 
-1. [Curso de Frontend Developer](Frontend-Developer/README.md)
-2. [Curso Práctico de Frontend Developer](Frontend-Developer/README.md)
-3. [Curso de Fundamentos de JavaScript](Fundamentos-de-JavaScript/README.md)
-4. [Curso de Asincronismo con JavaScript](Asincronismo-con-JavaScript/README.md)
+1. [Curso de Frontend Developer](Full-Stack-Developer-con-JavaScript/Desarrolla-el-frontend-de-tu-aplicación/Frontend-Developer/README.md)
+2. [Curso Práctico de Frontend Developer](Full-Stack-Developer-con-JavaScript/Desarrolla-el-frontend-de-tu-aplicación/Frontend-Developer-Practico/README.md)
+3. [Curso de Fundamentos de JavaScript](Full-Stack-Developer-con-JavaScript/Desarrolla-el-frontend-de-tu-aplicación/Fundamentos-de-JavaScript/README.md)
+4. [Curso de Asincronismo con JavaScript](Full-Stack-Developer-con-JavaScript/Desarrolla-el-frontend-de-tu-aplicación/Asincronismo-con-JavaScript/README.md)
 
 #### Crea el Backend, intégralo a bases de datos y despliega en producción
 
-1. [Curso de Introducción al Desarrollo Backend](Introduccion-Desarrollo-Backend/README.md)
-2. [Curso de Base de Datos con SQL](Base-de-Datos-con-SQL/README.md)
-3. [Curso de ChatBot con WhatsApp API](ChatBot-con-WhatsApp-API/README.md)
+1. [Curso de Introducción al Desarrollo Backend](Full-Stack-Developer-con-JavaScript/Crea-el-Backend,intégralo-a-bases-de-datos-y-despliega-en-producción/Introduccion-Desarrollo-Backend/README.md)
+2. [Curso de Base de Datos con SQL](Full-Stack-Developer-con-JavaScript/Crea-el-Backend,intégralo-a-bases-de-datos-y-despliega-en-producción/Base-de-Datos-con-SQL/README.md)
+3. [Curso de ChatBot con WhatsApp API](Full-Stack-Developer-con-JavaScript/Crea-el-Backend,intégralo-a-bases-de-datos-y-despliega-en-producción/ChatBot-con-WhatsApp-API/README.md)
 
 ## Quiero seguir aprendiendo
 
