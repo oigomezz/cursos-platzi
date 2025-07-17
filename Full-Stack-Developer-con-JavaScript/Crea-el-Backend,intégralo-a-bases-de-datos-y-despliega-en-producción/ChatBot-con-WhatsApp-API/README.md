@@ -1,5 +1,172 @@
 # Curso de ChatBot con WhatsApp API
 
+## Tabla de Contenido<!-- omit in toc -->
+
+- [Implementación de Chatbots con API de WhatsApp Business](#implementación-de-chatbots-con-api-de-whatsapp-business)
+  - [¿Por qué elegir WhatsApp para conectar con tu audiencia?](#por-qué-elegir-whatsapp-para-conectar-con-tu-audiencia)
+  - [¿Cómo puede la API de WhatsApp Business potenciar tu negocio?](#cómo-puede-la-api-de-whatsapp-business-potenciar-tu-negocio)
+  - [¿Cómo está siendo usada la API de WhatsApp por empresas de diversos sectores?](#cómo-está-siendo-usada-la-api-de-whatsapp-por-empresas-de-diversos-sectores)
+  - [¿Qué se aprende en un curso de integración de la API de WhatsApp Business?](#qué-se-aprende-en-un-curso-de-integración-de-la-api-de-whatsapp-business)
+  - [¿Cómo funciona un chatbot de ejemplo en WhatsApp?](#cómo-funciona-un-chatbot-de-ejemplo-en-whatsapp)
+- [API de WhatsApp Business: Integraciones y Comunicación Masiva](#api-de-whatsapp-business-integraciones-y-comunicación-masiva)
+  - [¿Qué es WhatsApp Personal y cuál es su rol en los negocios?](#qué-es-whatsapp-personal-y-cuál-es-su-rol-en-los-negocios)
+  - [¿Cómo beneficia WhatsApp Business a los pequeños y medianos negocios?](#cómo-beneficia-whatsapp-business-a-los-pequeños-y-medianos-negocios)
+  - [¿Qué es la API de WhatsApp y por qué es ideal para grandes empresas?](#qué-es-la-api-de-whatsapp-y-por-qué-es-ideal-para-grandes-empresas)
+- [Registro y Uso de Herramientas Meta para Desarrolladores](#registro-y-uso-de-herramientas-meta-para-desarrolladores)
+  - [¿Cómo comenzar con el desarrollo en Meta for Developers?](#cómo-comenzar-con-el-desarrollo-en-meta-for-developers)
+  - [¿Cómo registrarse en Meta for Developers?](#cómo-registrarse-en-meta-for-developers)
+  - [¿Qué recursos están disponibles para los desarrolladores?](#qué-recursos-están-disponibles-para-los-desarrolladores)
+  - [¿Cómo aplicar el conocimiento en un caso práctico?](#cómo-aplicar-el-conocimiento-en-un-caso-práctico)
+- [Creación de aplicaciones con la API de WhatsApp para negocios](#creación-de-aplicaciones-con-la-api-de-whatsapp-para-negocios)
+  - [¿Cómo puedo crear mi primera aplicación con una cuenta de desarrollador en Meta?](#cómo-puedo-crear-mi-primera-aplicación-con-una-cuenta-de-desarrollador-en-meta)
+  - [¿Qué debo considerar al seleccionar el tipo de aplicación?](#qué-debo-considerar-al-seleccionar-el-tipo-de-aplicación)
+  - [¿Cómo defino el tipo de empresa y nombre de la aplicación?](#cómo-defino-el-tipo-de-empresa-y-nombre-de-la-aplicación)
+- [Configuración e Implementación de la API de WhatsApp Business](#configuración-e-implementación-de-la-api-de-whatsapp-business)
+  - [¿Por qué es importante entender la documentación de la API de WhatsApp?](#por-qué-es-importante-entender-la-documentación-de-la-api-de-whatsapp)
+  - [¿Cómo configurar una aplicación con la API de WhatsApp?](#cómo-configurar-una-aplicación-con-la-api-de-whatsapp)
+  - [¿Cuáles son los elementos clave para implementar la API de WhatsApp?](#cuáles-son-los-elementos-clave-para-implementar-la-api-de-whatsapp)
+  - [¿Cómo mejorar la integración con WhatsApp?](#cómo-mejorar-la-integración-con-whatsapp)
+  - [¿Cómo gestionar los recursos para el uso masivo?](#cómo-gestionar-los-recursos-para-el-uso-masivo)
+- [Configuración de Mensajería con API de WhatsApp para Veterinaria](#configuración-de-mensajería-con-api-de-whatsapp-para-veterinaria)
+  - [¿Cómo configurar un token de acceso en WhatsApp para pruebas?](#cómo-configurar-un-token-de-acceso-en-whatsapp-para-pruebas)
+  - [¿Cómo gestionar números y contactos para la aplicación?](#cómo-gestionar-números-y-contactos-para-la-aplicación)
+  - [¿Cómo probar la API de WhatsApp?](#cómo-probar-la-api-de-whatsapp)
+- [Integración de mensajes y recursos en Postman](#integración-de-mensajes-y-recursos-en-postman)
+  - [¿Cómo utilizar la API de WhatsApp en Postman?](#cómo-utilizar-la-api-de-whatsapp-en-postman)
+  - [¿Qué es Postman y para qué sirve?](#qué-es-postman-y-para-qué-sirve)
+  - [¿Cómo configurar Postman para usar la API de WhatsApp?](#cómo-configurar-postman-para-usar-la-api-de-whatsapp)
+  - [¿Cómo enviar un mensaje de prueba?](#cómo-enviar-un-mensaje-de-prueba)
+  - [¿Cómo entender errores comunes en Postman?](#cómo-entender-errores-comunes-en-postman)
+  - [¿Qué sigue después de la configuración?](#qué-sigue-después-de-la-configuración)
+- [Configuración de un Servidor con Express y GitHub para Veterinaria](#configuración-de-un-servidor-con-express-y-github-para-veterinaria)
+  - [¿Cómo organizar la estructura de carpetas para el proyecto?](#cómo-organizar-la-estructura-de-carpetas-para-el-proyecto)
+  - [¿Cómo iniciar el repositorio de Git y la configuración de NPM?](#cómo-iniciar-el-repositorio-de-git-y-la-configuración-de-npm)
+  - [¿Cuáles son las dependencias necesarias para el proyecto?](#cuáles-son-las-dependencias-necesarias-para-el-proyecto)
+  - [¿Cómo organizar el editor de código?](#cómo-organizar-el-editor-de-código)
+- [Configuración de Webhook para API de WhatsApp con Node.js](#configuración-de-webhook-para-api-de-whatsapp-con-nodejs)
+  - [¿Cómo configurar el servidor de Node.js para WhatsApp API?](#cómo-configurar-el-servidor-de-nodejs-para-whatsapp-api)
+  - [¿Cómo implementar el código de conexión y manejo de solicitudes?](#cómo-implementar-el-código-de-conexión-y-manejo-de-solicitudes)
+  - [¿Cómo realizar pruebas locales y públicas?](#cómo-realizar-pruebas-locales-y-públicas)
+  - [¿Cómo probar y depurar la integración?](#cómo-probar-y-depurar-la-integración)
+- [Arquitectura MVC para Escalabilidad en Bots de Mensajería](#arquitectura-mvc-para-escalabilidad-en-bots-de-mensajería)
+  - [¿Por qué es importante dividir el código en módulos?](#por-qué-es-importante-dividir-el-código-en-módulos)
+  - [¿Cómo se organiza la estructura del bot?](#cómo-se-organiza-la-estructura-del-bot)
+  - [¿Qué papel juegan los webhooks en esta configuración?](#qué-papel-juegan-los-webhooks-en-esta-configuración)
+  - [¿Qué aporta la clase WhatsApp Service?](#qué-aporta-la-clase-whatsapp-service)
+  - [¿Cómo contribuye esta arquitectura al trabajo en equipo?](#cómo-contribuye-esta-arquitectura-al-trabajo-en-equipo)
+  - [¿Cómo se gestiona la inicialización de la aplicación?](#cómo-se-gestiona-la-inicialización-de-la-aplicación)
+- [Conceptos básicos de validación de mensajes en programación](#conceptos-básicos-de-validación-de-mensajes-en-programación)
+  - [¿Cómo personalizar la respuesta de un bot para identificar al usuario?](#cómo-personalizar-la-respuesta-de-un-bot-para-identificar-al-usuario)
+  - [¿Cómo configurar la lógica de identificación en el controller?](#cómo-configurar-la-lógica-de-identificación-en-el-controller)
+  - [¿Cómo realizar un reconocimiento de saludos?](#cómo-realizar-un-reconocimiento-de-saludos)
+  - [¿Cómo enviar un mensaje de bienvenida personalizado?](#cómo-enviar-un-mensaje-de-bienvenida-personalizado)
+  - [¿Cómo configurar la arquitectura y probar la lógica del bot?](#cómo-configurar-la-arquitectura-y-probar-la-lógica-del-bot)
+- [Saludo Personalizado con Nombre desde WhatsApp](#saludo-personalizado-con-nombre-desde-whatsapp)
+  - [¿Cómo personalizar el saludo de bienvenida de un bot?](#cómo-personalizar-el-saludo-de-bienvenida-de-un-bot)
+  - [¿Cómo obtener el nombre del usuario?](#cómo-obtener-el-nombre-del-usuario)
+  - [¿Cómo implementar un mensaje de saludo personalizado?](#cómo-implementar-un-mensaje-de-saludo-personalizado)
+  - [¿Qué hacer cuando el nombre es un nombre completo?](#qué-hacer-cuando-el-nombre-es-un-nombre-completo)
+- [Menús interactivos en WhatsApp: guía para bots con Postman y API](#menús-interactivos-en-whatsapp-guía-para-bots-con-postman-y-api)
+  - [¿Cómo configurar el flujo de mensajes para iniciar la conversación?](#cómo-configurar-el-flujo-de-mensajes-para-iniciar-la-conversación)
+  - [¿Cómo crear un menú de opciones en WhatsApp?](#cómo-crear-un-menú-de-opciones-en-whatsapp)
+  - [Pasos básicos en Postman](#pasos-básicos-en-postman)
+  - [¿Cómo implementar la lógica en el código del bot?](#cómo-implementar-la-lógica-en-el-código-del-bot)
+  - [¿Cómo personalizar y extender el flujo de interacción?](#cómo-personalizar-y-extender-el-flujo-de-interacción)
+  - [Consideraciones para un flujo optimizado](#consideraciones-para-un-flujo-optimizado)
+- [Manejo de Interacciones en Bot de WhatsApp con JavaScript](#manejo-de-interacciones-en-bot-de-whatsapp-con-javascript)
+  - [¿Cómo capturar la interacción del usuario con botones?](#cómo-capturar-la-interacción-del-usuario-con-botones)
+  - [¿Cómo procesar la opción seleccionada?](#cómo-procesar-la-opción-seleccionada)
+  - [¿Cómo enviar respuestas según la lógica definida?](#cómo-enviar-respuestas-según-la-lógica-definida)
+  - [Manejo de errores: ¿qué hacer si algo falla?](#manejo-de-errores-qué-hacer-si-algo-falla)
+  - [¿Cómo mejorar la funcionalidad del bot?](#cómo-mejorar-la-funcionalidad-del-bot)
+- [Envío de Archivos Multimedia con API de WhatsApp](#envío-de-archivos-multimedia-con-api-de-whatsapp)
+  - [¿Cómo enviar archivos multimedia en WhatsApp?](#cómo-enviar-archivos-multimedia-en-whatsapp)
+  - [¿Cuáles formatos de archivos se pueden enviar?](#cuáles-formatos-de-archivos-se-pueden-enviar)
+  - [¿Cómo programar la lógica para enviar estos archivos?](#cómo-programar-la-lógica-para-enviar-estos-archivos)
+  - [¿Cómo manejar errores en el envío de archivos?](#cómo-manejar-errores-en-el-envío-de-archivos)
+  - [¿Qué importancia tiene el flujo de envío en una aplicación?](#qué-importancia-tiene-el-flujo-de-envío-en-una-aplicación)
+- [Uso de WhatsApp para Envío de Mensajes Multimedia](#uso-de-whatsapp-para-envío-de-mensajes-multimedia)
+  - [¿Cómo integrar el envío de mensajes multimedia en una aplicación?](#cómo-integrar-el-envío-de-mensajes-multimedia-en-una-aplicación)
+  - [¿Cómo configurar el flujo para enviar medios?](#cómo-configurar-el-flujo-para-enviar-medios)
+  - [¿Cómo se estructura el código para diferentes tipos de medios?](#cómo-se-estructura-el-código-para-diferentes-tipos-de-medios)
+  - [¿Cuáles son las prácticas recomendadas para el manejo de archivos multimedia?](#cuáles-son-las-prácticas-recomendadas-para-el-manejo-de-archivos-multimedia)
+  - [¿Cómo hacer los envíos más dinámicos?](#cómo-hacer-los-envíos-más-dinámicos)
+  - [¿Qué desafíos se presentan en la implementación?](#qué-desafíos-se-presentan-en-la-implementación)
+  - [¿Qué mejoras sugieres para el flujo de trabajo?](#qué-mejoras-sugieres-para-el-flujo-de-trabajo)
+- [Flujo Completo para Agendar Citas en un Bot de Mensajería](#flujo-completo-para-agendar-citas-en-un-bot-de-mensajería)
+  - [¿Cómo crear un flujo de agenda de citas en un bot?](#cómo-crear-un-flujo-de-agenda-de-citas-en-un-bot)
+  - [¿Qué es un constructor y para qué se utiliza en este flujo?](#qué-es-un-constructor-y-para-qué-se-utiliza-en-este-flujo)
+  - [¿Cómo manejamos el estado del flujo con un switch?](#cómo-manejamos-el-estado-del-flujo-con-un-switch)
+  - [¿Cómo inicializar el flujo y enviar mensajes?](#cómo-inicializar-el-flujo-y-enviar-mensajes)
+  - [¿Qué errores comunes podemos encontrar y cómo solucionarlos?](#qué-errores-comunes-podemos-encontrar-y-cómo-solucionarlos)
+  - [¿Cómo probar el flujo completo?](#cómo-probar-el-flujo-completo)
+- [Manejo de Citas para Mascotas: Registro y Confirmación](#manejo-de-citas-para-mascotas-registro-y-confirmación)
+  - [¿Cómo se puede gestionar un flujo de citas médicas para mascotas en una aplicación?](#cómo-se-puede-gestionar-un-flujo-de-citas-médicas-para-mascotas-en-una-aplicación)
+  - [¿Cuál es la lógica que sustenta un flujo de citas?](#cuál-es-la-lógica-que-sustenta-un-flujo-de-citas)
+  - [¿Cómo se construye un mensaje de confirmación robusto?](#cómo-se-construye-un-mensaje-de-confirmación-robusto)
+  - [¿Cómo se implementa y valida este flujo?](#cómo-se-implementa-y-valida-este-flujo)
+  - [¿Dónde podríamos almacenar esta información?](#dónde-podríamos-almacenar-esta-información)
+- [Integración de Google Sheets API para Guardar Datos del Bot](#integración-de-google-sheets-api-para-guardar-datos-del-bot)
+  - [¿Cómo integrar nuestro bot con Google Sheets?](#cómo-integrar-nuestro-bot-con-google-sheets)
+  - [¿Qué necesitamos para comenzar con la API de Google Sheets?](#qué-necesitamos-para-comenzar-con-la-api-de-google-sheets)
+  - [¿Cómo obtener las credenciales necesarias?](#cómo-obtener-las-credenciales-necesarias)
+  - [¿Cómo configurar Google Sheets para recibir datos?](#cómo-configurar-google-sheets-para-recibir-datos)
+- [Integración de Google Sheets con Node.js para Reservas Automáticas](#integración-de-google-sheets-con-nodejs-para-reservas-automáticas)
+  - [¿Cómo integrarse con la API de Google Sheets?](#cómo-integrarse-con-la-api-de-google-sheets)
+  - [¿Cómo se instala la dependencia Google APIs?](#cómo-se-instala-la-dependencia-google-apis)
+  - [¿Cuál es la lógica básica de comunicación con la API?](#cuál-es-la-lógica-básica-de-comunicación-con-la-api)
+  - [¿Cómo se realiza la autenticación y se utiliza el cliente autorizado?](#cómo-se-realiza-la-autenticación-y-se-utiliza-el-cliente-autorizado)
+  - [¿Cómo integrar la lógica en la aplicación principal?](#cómo-integrar-la-lógica-en-la-aplicación-principal)
+  - [¿Cuáles son los errores comunes y sus soluciones?](#cuáles-son-los-errores-comunes-y-sus-soluciones)
+- [Integración de ChatGPT en Bots Veterinarios con API de OpenAI](#integración-de-chatgpt-en-bots-veterinarios-con-api-de-openai)
+  - [¿Cómo conectar un bot con Chat GPT utilizando la API de OpenAI?](#cómo-conectar-un-bot-con-chat-gpt-utilizando-la-api-de-openai)
+  - [¿Qué se necesita antes de comenzar?](#qué-se-necesita-antes-de-comenzar)
+  - [¿Cómo instalar la dependencia de OpenAI?](#cómo-instalar-la-dependencia-de-openai)
+  - [¿Cómo crear un archivo de servicio en Node.js?](#cómo-crear-un-archivo-de-servicio-en-nodejs)
+  - [¿Cómo manejar las variables de entorno?](#cómo-manejar-las-variables-de-entorno)
+  - [¿Cómo se integra el servicio en el flujo del bot?](#cómo-se-integra-el-servicio-en-el-flujo-del-bot)
+- [Integración de ChatGPT en Flujo de Mensajería con WhatsApp](#integración-de-chatgpt-en-flujo-de-mensajería-con-whatsapp)
+  - [¿Cómo integrar OpenAI Service con el flujo de un chatbot?](#cómo-integrar-openai-service-con-el-flujo-de-un-chatbot)
+  - [¿Cómo inicializar el estado del asistente?](#cómo-inicializar-el-estado-del-asistente)
+  - [¿Cómo detectar el estado del asistente?](#cómo-detectar-el-estado-del-asistente)
+  - [¿Cómo manejar el flujo del asistente?](#cómo-manejar-el-flujo-del-asistente)
+  - [¿Cómo enviar interacciones basadas en botones?](#cómo-enviar-interacciones-basadas-en-botones)
+  - [¿Cómo probar y ajustar el flujo?](#cómo-probar-y-ajustar-el-flujo)
+- [Envío de Contacto en Emergencias Veterinarias vía WhatsApp](#envío-de-contacto-en-emergencias-veterinarias-vía-whatsapp)
+  - [¿Cómo integrar un contacto en el flujo de emergencias del bot de WhatsApp?](#cómo-integrar-un-contacto-en-el-flujo-de-emergencias-del-bot-de-whatsapp)
+  - [¿Cómo configurar el flujo inicial en WhatsApp Service?](#cómo-configurar-el-flujo-inicial-en-whatsapp-service)
+  - [¿Cómo personalizar el manejador de mensajes?](#cómo-personalizar-el-manejador-de-mensajes)
+  - [¿Cómo mejorar la interacción del usuario con el menú del bot?](#cómo-mejorar-la-interacción-del-usuario-con-el-menú-del-bot)
+  - [¿Qué errores comunes podemos encontrar al implementar este flujo?](#qué-errores-comunes-podemos-encontrar-al-implementar-este-flujo)
+- [Validación de Menú en WhatsApp con IDs Estables](#validación-de-menú-en-whatsapp-con-ids-estables)
+  - [¿Cómo se mejora la validación de opciones en un menú interactivo?](#cómo-se-mejora-la-validación-de-opciones-en-un-menú-interactivo)
+  - [¿Qué son las IDs y cómo se utilizan?](#qué-son-las-ids-y-cómo-se-utilizan)
+  - [¿Cómo se envía una ubicación usando la API de WhatsApp?](#cómo-se-envía-una-ubicación-usando-la-api-de-whatsapp)
+  - [¿Cómo se construye el servicio de envío de ubicación?](#cómo-se-construye-el-servicio-de-envío-de-ubicación)
+  - [¿Cómo completar y probar la integración del menú con WhatsApp?](#cómo-completar-y-probar-la-integración-del-menú-con-whatsapp)
+  - [Implementación en el menú de opciones](#implementación-en-el-menú-de-opciones)
+  - [Prueba de la aplicación](#prueba-de-la-aplicación)
+- [Uso de Variables de Entorno y Mejora de Código en WhatsApp Service](#uso-de-variables-de-entorno-y-mejora-de-código-en-whatsapp-service)
+  - [¿Cómo comenzamos organizando nuestro código?](#cómo-comenzamos-organizando-nuestro-código)
+  - [¿Qué elementos básicos necesitamos en el nuevo archivo?](#qué-elementos-básicos-necesitamos-en-el-nuevo-archivo)
+  - [¿Cómo actualizamos el servicio de WhatsApp para utilizar esta lógica?](#cómo-actualizamos-el-servicio-de-whatsapp-para-utilizar-esta-lógica)
+- [Despliegue de Bots de WhatsApp en Railway con Integración de GitHub](#despliegue-de-bots-de-whatsapp-en-railway-con-integración-de-github)
+  - [¿Cómo llevar a producción un bot de WhatsApp?](#cómo-llevar-a-producción-un-bot-de-whatsapp)
+  - [¿Qué plataformas son ideales para el despliegue?](#qué-plataformas-son-ideales-para-el-despliegue)
+  - [¿Cómo gestionar las variables de entorno?](#cómo-gestionar-las-variables-de-entorno)
+  - [¿Cómo asegurar que el despliegue funcione correctamente?](#cómo-asegurar-que-el-despliegue-funcione-correctamente)
+    - [Verificación de URL](#verificación-de-url)
+    - [Configuración en Meta](#configuración-en-meta)
+      - [¿Cómo manejar cambios y ajustes tras el despliegue?](#cómo-manejar-cambios-y-ajustes-tras-el-despliegue)
+      - [¿Cómo verificar el funcionamiento del bot después del despliegue?](#cómo-verificar-el-funcionamiento-del-bot-después-del-despliegue)
+- [Publicación y configuración de aplicaciones con API de WhatsApp](#publicación-y-configuración-de-aplicaciones-con-api-de-whatsapp)
+  - [¿Cómo publicar una aplicación en el dashboard de Meta?](#cómo-publicar-una-aplicación-en-el-dashboard-de-meta)
+  - [¿Cuáles son los pasos para configurar el API de WhatsApp?](#cuáles-son-los-pasos-para-configurar-el-api-de-whatsapp)
+  - [¿Cómo configurar métodos de pago adecuados?](#cómo-configurar-métodos-de-pago-adecuados)
+  - [¿Qué otros aspectos administrativos se deben considerar?](#qué-otros-aspectos-administrativos-se-deben-considerar)
+  - [¿Cómo se configuran las cuentas de WhatsApp Manager y las variables necesarias?](#cómo-se-configuran-las-cuentas-de-whatsapp-manager-y-las-variables-necesarias)
+  - [¿Cómo realizar la prueba de la aplicación con los cambios implementados?](#cómo-realizar-la-prueba-de-la-aplicación-con-los-cambios-implementados)
+
 ## Implementación de Chatbots con API de WhatsApp Business
 
 El marketing en aplicaciones de mensajería ha revolucionado la comunicación entre empresas y clientes, y WhatsApp lidera este cambio con una plataforma que ofrece una experiencia personalizada y global. Su API permite a las empresas aprovechar el alcance masivo y la preferencia de los usuarios por esta app, transformando las interacciones comerciales en conversaciones fluidas y efectivas.
@@ -34,6 +201,8 @@ Un curso enfocado en la API de WhatsApp Business suele cubrir la creación de ch
 
 Un ejemplo práctico es el chatbot de **MedPet**, que responde en tiempo real a consultas veterinarias. Al enviar un mensaje, el usuario recibe una respuesta personalizada y puede acceder a un menú de opciones. Si un usuario pregunta “¿Mi perro no quiere comer, debo llevarlo de emergencia?”, el chatbot analiza y responde con sugerencias y recomendaciones, siempre disponible las 24 horas.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## API de WhatsApp Business: Integraciones y Comunicación Masiva
 
 Antes de profundizar en la API de WhatsApp, conviene entender las versiones de esta herramienta que se pueden emplear para potenciar la comunicación empresarial. WhatsApp Personal y WhatsApp Business son opciones iniciales de gran utilidad, pero la API de WhatsApp permite alcanzar un nivel de automatización e interacción masiva, ideal para empresas que buscan escalar sus servicios.
@@ -63,6 +232,8 @@ La API de WhatsApp permite crear flujos avanzados e interacciones programables a
 - Opciones para envíos masivos de notificaciones, como actualizaciones de entrega de pedidos.
 
 Con esta API, las empresas pueden reducir la dependencia en agentes humanos, permitiendo que los chatbots gestionen las interacciones frecuentes, mejorando la eficiencia y la experiencia del cliente.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Registro y Uso de Herramientas Meta para Desarrolladores
 
@@ -104,6 +275,8 @@ Para demostrar el potencial de las herramientas de Meta, se puede desarrollar un
 
 Con estos pasos y recursos, te invitamos a que empieces a explorar y construir grandes aplicaciones utilizando la plataforma de Meta. ¡El conocimiento está al alcance y solo necesitas comenzar!
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Creación de aplicaciones con la API de WhatsApp para negocios
 
 ### ¿Cómo puedo crear mi primera aplicación con una cuenta de desarrollador en Meta?
@@ -135,6 +308,8 @@ Al crear la aplicación, se te pedirá tu contraseña para continuar. Finalmente
 
 Es fundamental familiarizarse con la documentación disponible en el panel de administración. Dedica tiempo a leer y comprender las características y elementos que enfrentarás. Esta lectura te permitirá planificar de forma efectiva la construcción y despliegue de tu aplicación.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Configuración e Implementación de la API de WhatsApp Business
 
 ### ¿Por qué es importante entender la documentación de la API de WhatsApp?
@@ -165,6 +340,8 @@ Para potenciar la aplicación y facilitar la integración, Meta proporciona herr
 ### ¿Cómo gestionar los recursos para el uso masivo?
 
 Finalmente, cuando pases de un entorno de pruebas a producción, necesitarás adquirir un número real y configurar métodos de pago. Esto es esencial para escalar el uso y permitir la interacción masiva con los usuarios, superando las limitaciones de las pruebas. Al alcanzar esta fase, estarás listo para desplegar la aplicación y permitir el acceso a cualquier usuario interesado en un flujo de integración fluido.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Configuración de Mensajería con API de WhatsApp para Veterinaria
 
@@ -224,6 +401,8 @@ Probar la API es fundamental para entender sus características y capacidades. S
 
 Para maximizarlas capacidades de tu aplicación desde WhatsApp, asegúrate de contar con las herramientas necesarias como Visual Studio Code, una terminal y Postman, las cuales ayudarán en la construcción y prueba del bot, modelando así la experiencia del usuario final y resolviendo problemas comunes durante la fase de pruebas. Con esto, te alientamos a profundizar en estas herramientas, brindarte más conocimientos y afán de seguir aprendiendo para lograr todo el potencial de tu solución digital.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Integración de mensajes y recursos en Postman
 
 ### ¿Cómo utilizar la API de WhatsApp en Postman?
@@ -269,6 +448,8 @@ Familiarizarse con los mensajes de error en Postman es crucial:
 Una vez que domines el uso de Postman con la API de WhatsApp, el siguiente paso es integrar estas capacidades a tu aplicación, asegurando un flujo de trabajo eficiente. Utiliza los ejemplos y documentación para explorar más funcionalidades y personalizar las interacciones según los requerimientos específicos del proyecto, como el de una veterinaria en este caso.
 
 Explora y experimenta. Con un entendimiento consolidado de las herramientas y configuraciones, estarás en una posición ventajosa para encarar exitosamente la implementación de esta API.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Configuración de un Servidor con Express y GitHub para Veterinaria
 
@@ -336,6 +517,8 @@ En Visual Studio Code:
 
 - **Crear un archivo .gitignore:** Añade node_modules para excluir esta carpeta del control de versiones, evitando subir dependencias innecesarias a Git.
 - **Extensiones recomendadas:** Instala extensiones para facilitar la edición de código JavaScript y, si es posible, considera usar herramientas como GitHub Copilot para autocompletar y sugerencias de código.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Configuración de Webhook para API de WhatsApp con Node.js
 
@@ -406,6 +589,8 @@ Para implementar una integración básica entre WhatsApp API y una aplicación d
    - Aunque el Port Forwarding permite exponer el servidor para pruebas, evita usar esta configuración en producción.
    - Considera implementar una solución de hosting adecuada para el despliegue en producción con tokens de larga duración.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Arquitectura MVC para Escalabilidad en Bots de Mensajería
 
 Implementar un bot escalable usando una arquitectura organizada es esencial para gestionar su crecimiento y adaptabilidad a nuevos servicios. En este enfoque, se aplica la arquitectura Modelo-Vista-Controlador (MVC), dividiendo el proyecto en componentes específicos para garantizar claridad y facilitar futuras mejoras sin complicaciones.
@@ -451,6 +636,8 @@ El archivo App.js centraliza la configuración general de la aplicación, incluy
 
 - Configuración de variables de entorno y rutas de Webhub.
 - Inicialización del servidor, dejando la lógica de manejo de solicitudes a los controladores y servicios.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Conceptos básicos de validación de mensajes en programación
 
@@ -517,6 +704,8 @@ Realizar pruebas es fundamental. Envía "hola", "hi" o cualquier otro saludo pre
 
 Explora y comenta qué tipo de saludo te parecería más efectivo para este contexto.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Saludo Personalizado con Nombre desde WhatsApp
 
 ### ¿Cómo personalizar el saludo de bienvenida de un bot?
@@ -569,6 +758,8 @@ function getFirstName(name) {
 - **Mejora constante:** Prueba tu bot con diferentes usuarios y casos para afinar su funcionalidad.
 - **Comunicación y personalización:** Ofrecer saludos personalizados ayuda a construir una relación más cercana con los usuarios, incrementando el engagement y mejorando su experiencia.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Menús interactivos en WhatsApp: guía para bots con Postman y API
 
 Crear un flujo de interacción con usuarios en WhatsApp puede ser determinante para optimizar la experiencia y direccionar sus consultas. Utilizando la API de WhatsApp y Postman, es posible construir un bot interactivo que, mediante botones personalizados, guía al usuario paso a paso. Esta interacción evita que el usuario se sienta perdido y garantiza respuestas rápidas y precisas.
@@ -616,6 +807,8 @@ Si bien solo se permiten tres botones, es posible estructurar múltiples submen�
 - Limitar el menú principal a las tres opciones más solicitadas.
 - Configurar submenús dentro de cada opción si el flujo lo permite.
 - Probar la estructura en WhatsApp y asegurar que la respuesta sea rápida y efectiva.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Manejo de Interacciones en Bot de WhatsApp con JavaScript
 
@@ -681,6 +874,8 @@ WhatsAppService.sendMessage(quien, response).catch((error) => {
 ¡Es solo el comienzo! Al lograr que el bot reconozca y maneje interacciones básicas, podemos empezar a incluir contenido multimedia y otros recursos, como imágenes o audios, que enriquecerán los flujos de interacción y ofrecerán una experiencia más dinámica.
 
 Continúa explorando y construyendo funciones adicionales para agendar citas, enviar ubicaciones precisas y guardar información proporcionada por el usuario. Con cada paso, el bot se convertirá en una poderosa herramienta de soporte y automatización, ¡así que sigue aprendiendo y experimentando!
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Envío de Archivos Multimedia con API de WhatsApp
 
@@ -774,6 +969,8 @@ La correcta ejecución y manejo del flujo de envío en una aplicación es crucia
 
 Al continuar el proceso de aprendizaje e implementación de estas prácticas, se potencia la capacidad de desarrollar aplicaciones más integradas e interactivas. Cada detalle y ajuste realizado en el código contribuyen a un funcionamiento más robusto y amigable.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Uso de WhatsApp para Envío de Mensajes Multimedia
 
 ### ¿Cómo integrar el envío de mensajes multimedia en una aplicación?
@@ -846,6 +1043,8 @@ Para maximizar la eficiencia del flujo de trabajo integrado:
 ### Conclusión
 
 Implementar envíos multimedia añade significativamente valor a las aplicaciones de mensajería. Con buenas prácticas de desarrollo y un enfoque hacia la automatización, puedes crear una experiencia más rica y útil para tu usuario final.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Flujo Completo para Agendar Citas en un Bot de Mensajería
 
@@ -945,6 +1144,8 @@ Este proceso iterativo de codificar, probar y corregir nos ayuda a asegurar un f
 
 Aprender a manejar estados y flujos te permitirá desarrollar sistemas más complejos y eficientes en el futuro.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Manejo de Citas para Mascotas: Registro y Confirmación
 
 ### ¿Cómo se puede gestionar un flujo de citas médicas para mascotas en una aplicación?
@@ -1014,6 +1215,8 @@ Para poder almacenar y acceder a esta información a largo plazo, considerar opc
 
 Es importante elegir una opción que se adapte bien a las necesidades de la aplicación y que garantice escalabilidad y seguridad.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Integración de Google Sheets API para Guardar Datos del Bot
 
 ### ¿Cómo integrar nuestro bot con Google Sheets?
@@ -1067,6 +1270,8 @@ Una vez que tenemos nuestras credenciales listas, es momento de preparar el docu
 ### Recomendaciones finales
 
 A medida que avanzas en la integración y configuración, recuerda verificar que todos los campos en tu hoja de cálculo correspondan con los datos que tu bot recopila. Alinear estos elementos garantizará que los datos se inserten correctamente y se mantenga la integridad de la información.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Integración de Google Sheets con Node.js para Reservas Automáticas
 
@@ -1171,6 +1376,8 @@ Durante la implementación, es común enfrentarse a errores tipográficos o prob
 
 Finalmente, el buen mantenimiento de un formato de código legible no solo facilita la detección de errores sino que también mejora la colaboración y la comprensión por parte de otros desarrolladores.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Integración de ChatGPT en Bots Veterinarios con API de OpenAI
 
 ### ¿Cómo conectar un bot con Chat GPT utilizando la API de OpenAI?
@@ -1241,6 +1448,8 @@ Generación de un nuevo API key:
 Con la lógica desarrollada y las claves en su lugar, el siguiente paso es integrar este servicio en la aplicación existente. Esto implica exportar la función openAiService y utilizarla en el punto del bot donde se desea proporcionar respuestas basadas en inteligencia artificial.
 
 Recuerda personalizar el prompt según el contexto del bot para asegurar que las respuestas sean acordes a las expectativas de los usuarios.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Integración de ChatGPT en Flujo de Mensajería con WhatsApp
 
@@ -1323,6 +1532,8 @@ await whatsappService.sendInteraction(user, menuMessage, buttons);
 ### ¿Cómo probar y ajustar el flujo?
 
 Una vez que toda la lógica esté en su lugar, es importante validar y probar el flujo completando varias interacciones, evaluando tanto la precisión de las respuestas del GPT como la funcionalidad de los botones de interacción. Invita a los usuarios a probar preguntando: "Mi perro tiene dos días sin querer comer y está vomitando", para recibir respuestas y verificar si las opciones de interacción funcionan correctamente. Sin embargo, recuerda personalizar cualquier mensaje automatizado conforme a la sensibilidad de los usuarios.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Envío de Contacto en Emergencias Veterinarias vía WhatsApp
 
@@ -1428,6 +1639,8 @@ Al configurar este flujo, es esencial tener cuidado con:
 - **Manejo de errores:** Implementa bloques try-catch para capturar y manejar excepciones.
 - **Revisión y pruebas:** Antes de su despliegue, prueba el flujo para asegurarte de que funciona correctamente, especialmente verificando si los mensajes de emergencia se envían de manera adecuada.
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Validación de Menú en WhatsApp con IDs Estables
 
 ### ¿Cómo se mejora la validación de opciones en un menú interactivo?
@@ -1502,6 +1715,8 @@ await sendLocationMessage(user, latitud, longitud, nombre, direccion);
 Procede a iniciar el bot en WhatsApp y verifica que el flujo funcione correctamente. Al seleccionar "ubicación", se debería mostrar el mapa con las coordenadas proporcionadas. El objetivo es que el usuario pueda visualizar e interactuar con la ubicación desde la aplicación.
 
 La mejora continua de estos servicios y el uso de prácticas recomendadas asegura una experiencia de usuario más fluida y eficiente, algo fundamental para el éxito de las aplicaciones interactivas en plataformas como WhatsApp.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Uso de Variables de Entorno y Mejora de Código en WhatsApp Service
 
@@ -1580,6 +1795,8 @@ Al implementar estos cambios, nuestro código no solo se vuelve más claro y efi
 
 Adopta este enfoque proactivo en tu desarrollo y verá cómo tus aplicaciones se vuelven más robustas y fáciles de mantener. ¡Continúa mejorando y explorando nuevas formas de optimizar el código!
 
+[🡡 volver al inicio](#tabla-de-contenido)
+
 ## Despliegue de Bots de WhatsApp en Railway con Integración de GitHub
 
 ### ¿Cómo llevar a producción un bot de WhatsApp?
@@ -1642,6 +1859,8 @@ Finalmente, es importante probar las funcionalidades de tu bot una vez desplegad
 - Valida funciones clave como las interacciones de usuario con recomendaciones específicas o respuestas de emergencia.
 
 Al completar estas pruebas, garantizas que tu bot no solo esté operativo, sino que ofrezca una experiencia de usuario fluida y eficiente.
+
+[🡡 volver al inicio](#tabla-de-contenido)
 
 ## Publicación y configuración de aplicaciones con API de WhatsApp
 
@@ -1718,3 +1937,5 @@ Llega el momento crítico: probar la aplicación con las configuraciones en prod
    - Integre lógica adicional según sea necesario para mantener el flujo completo de información en la aplicación.
 
 Estos pasos detallados aseguran que su aplicación esté lista para operar de manera eficiente y alcance a un público masivo. Siempre es posible seguir utilizando números de prueba para nuevas aplicaciones, lo que permite mantener el entorno de producción estable sin interrupciones al experimentar.
+
+[🡡 volver al inicio](#tabla-de-contenido)
